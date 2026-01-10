@@ -1,0 +1,28 @@
+<!-- 
+  This file is required for Netlify Forms to work with Next.js.
+  Netlify scans static HTML files at deploy time to detect forms.
+  This hidden form mirrors the contact form in the Next.js app.
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Forms</title>
+</head>
+<body>
+  <form name="kontakt" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <input type="text" name="date" />
+    <select name="event-type">
+      <option value="kindergeburtstag">Kindergeburtstag</option>
+      <option value="babyparty">Babyparty</option>
+      <option value="taufe">Taufe</option>
+      <option value="sonstige">Sonstige Feier</option>
+    </select>
+    <input type="number" name="guests" />
+    <textarea name="message"></textarea>
+  </form>
+</body>
+</html>
