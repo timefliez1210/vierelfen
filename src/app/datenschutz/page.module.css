@@ -1,0 +1,81 @@
+.page {
+    background: var(--color-cream-light);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.pageHeader {
+    background: linear-gradient(135deg, var(--color-wave-mid), var(--color-wave-dark));
+    color: var(--color-white);
+    padding: var(--space-12) 0;
+    text-align: center;
+}
+
+.pageHeader h1 {
+    color: var(--color-white);
+    margin: 0;
+}
+
+.content {
+    padding: var(--space-12) 0;
+}
+
+.card {
+    background: var(--color-white);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-card);
+}
+
+.card h2 {
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-4);
+    font-size: var(--text-xl);
+    color: var(--color-primary-dark);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--color-cream);
+}
+
+.card h2:first-child {
+    margin-top: 0;
+}
+
+.card h3 {
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-3);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-rose-dark);
+}
+
+.card p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: var(--space-4);
+}
+
+.card p strong {
+    color: var(--color-text);
+}
+
+.card a {
+    color: var(--color-primary);
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.source {
+    margin-top: var(--space-8);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-cream);
+    font-size: var(--text-sm);
+}
