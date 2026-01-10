@@ -50,19 +50,6 @@ export default function Impressum() {
                         <p>
                             Quelle: <a href="https://www.erecht24.de" target="_blank" rel="noopener noreferrer">eRecht24</a>
                         </p>
-
-                        <h3>Bildquellen</h3>
-                        <div className={styles.sources}>
-                            <p><strong>Fotoshooting:</strong></p>
-                            <p>
-                                <a href="https://www.dirinmedia.de" target="_blank" rel="noopener noreferrer">Dirin Media</a>
-                            </p>
-
-                            <p><strong>Illustrationen:</strong></p>
-                            <p>
-                                <a href="https://www.freepik.com" target="_blank" rel="noopener noreferrer">Freepik</a>
-                            </p>
-                        </div>
                     </div>
                 </div>
             </section>
