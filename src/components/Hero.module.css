@@ -20,6 +20,20 @@
     z-index: 0;
 }
 
+.backgroundImage {
+    object-fit: cover;
+}
+
+.background:has(.backgroundImage)::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(61, 61, 61, 0.4) 0%,
+            rgba(61, 61, 61, 0.5) 100%);
+    z-index: 1;
+}
+
 /* Wave decorations in background */
 .waveTop,
 .waveBottom {

@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -11,42 +12,74 @@ export default function Home() {
         subtitle="Deine Location für Spiel und Spaß in Hildesheim"
         ctaText="Jetzt anfragen"
         ctaHref="/kontakt"
+        backgroundImage="/images/gallery-venue.jpg"
+        imagePosition="top left"
       />
 
       {/* Introduction Section */}
       <section className={styles.intro}>
         <div className={styles.container}>
-          <div className={styles.introContent}>
-            <h2>Willkommen in der Vier Elfen Kinderlounge</h2>
-            <p>
-              Wir sind deine Location in Hildesheim, spezialisiert auf die Ausrichtung von
-              Kindergeburtstagen, Babypartys, Taufen und allen anderen Feiern, die Kinder
-              im Mittelpunkt haben. Spar dir Stress und Zeit – Feiere deine nächste Party
-              in unserer Kinderlounge Vier Elfen.
-            </p>
+          <h2 className={styles.introHeading}>Willkommen in der Vier Elfen Kinderlounge</h2>
+          <div className={styles.introImage}>
+            <Image
+              src="/images/gallery-unicorn.jpg"
+              alt="Einhorn Party Setup im Freien"
+              fill
+              sizes="100vw"
+              style={{ objectFit: 'cover' }}
+            />
           </div>
+          <p className={styles.introText}>
+            Wir sind deine Location in Hildesheim, spezialisiert auf die Ausrichtung von
+            Kindergeburtstagen, Babypartys, Taufen und allen anderen Feiern, die Kinder
+            im Mittelpunkt haben. Spar dir Stress und Zeit – Feiere deine nächste Party
+            in unserer Kinderlounge Vier Elfen.
+          </p>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className={styles.services}>
+      {/* Services Section - Angebot with Image */}
+      <section className={styles.serviceBlock}>
         <div className={styles.container}>
-          <div className={styles.servicesGrid}>
-            {/* Unser Angebot */}
-            <div className={styles.serviceCard}>
-              <h3>Unser Angebot</h3>
+          <div className={styles.serviceRow}>
+            <div className={styles.serviceImage}>
+              <Image
+                src="/images/gallery-mermaid.jpg"
+                alt="Meerjungfrau Motto-Party mit Ballondekoration"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+            <div className={styles.serviceContent}>
+              <h2>Unser Angebot</h2>
               <ul>
                 <li>🎂 Geburtstage</li>
                 <li>🎈 Babypartys</li>
                 <li>💒 Taufen</li>
-                <li>🎮 Spieleparadies</li>
+                <li>🧸 Spielparadies für die Kleinen</li>
                 <li>✨ Und vieles mehr: was Kinderherzen höher schlagen lässt</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Unser Service */}
-            <div className={styles.serviceCard}>
-              <h3>Unser Service</h3>
+      {/* Services Section - Service with Image (reversed) */}
+      <section className={styles.serviceBlock}>
+        <div className={styles.container}>
+          <div className={`${styles.serviceRow} ${styles.reversed}`}>
+            <div className={styles.serviceImage}>
+              <Image
+                src="/images/gallery-playarea.jpg"
+                alt="Spielbereich mit Kicker und Spielzeug"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+            <div className={styles.serviceContent}>
+              <h2>Unser Service</h2>
               <ul>
                 <li>📝 Einfache Anfrage</li>
                 <li>🎈 Dekoration mit max. 100 Ballons inklusive</li>
@@ -54,13 +87,10 @@ export default function Home() {
                 <li>🎨 Aktivitäten und Spiele für Kinder</li>
                 <li>⭐ Zusätzliche Optionen für individuelle Feiern</li>
               </ul>
+              <Link href="/kontakt" className={styles.cta}>
+                Jetzt anfragen
+              </Link>
             </div>
-          </div>
-
-          <div className={styles.ctaWrapper}>
-            <Link href="/kontakt" className={styles.cta}>
-              Jetzt anfragen
-            </Link>
           </div>
         </div>
       </section>

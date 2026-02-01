@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Hero.module.css';
 
 interface HeroProps {
@@ -7,6 +8,8 @@ interface HeroProps {
     ctaText?: string;
     ctaHref?: string;
     showCharacters?: boolean;
+    backgroundImage?: string;
+    imagePosition?: string;
 }
 
 export default function Hero({
@@ -15,11 +18,24 @@ export default function Hero({
     ctaText = 'Jetzt anfragen',
     ctaHref = '/kontakt',
     showCharacters = true,
+    backgroundImage,
+    imagePosition = 'center',
 }: HeroProps) {
     return (
         <section className={styles.hero}>
             {/* Background with wave */}
             <div className={styles.background}>
+                {backgroundImage && (
+                    <Image
+                        src={backgroundImage}
+                        alt=""
+                        fill
+                        priority
+                        className={styles.backgroundImage}
+                        sizes="100vw"
+                        style={{ objectPosition: imagePosition }}
+                    />
+                )}
                 <div className={styles.waveTop}></div>
                 <div className={styles.waveBottom}></div>
 

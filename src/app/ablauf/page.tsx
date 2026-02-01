@@ -103,7 +103,7 @@ export default function Ablauf() {
                         </div>
                         <div className={styles.ruleItem}>
                             <span className={styles.ruleIcon}>🎉</span>
-                            <p>Konfetti und Glitzer sind nicht erlaubt</p>
+                            <p>Konfetti und Glitzer sind nur nach Absprache erlaubt</p>
                         </div>
                         <div className={styles.ruleItem}>
                             <span className={styles.ruleIcon}>💝</span>

@@ -1,0 +1,210 @@
+.page {
+    background: var(--color-cream-light);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Page Header */
+.pageHeader {
+    background: linear-gradient(135deg, var(--color-wave-mid), var(--color-wave-dark));
+    color: var(--color-white);
+    padding: var(--space-16) 0;
+    text-align: center;
+}
+
+.pageHeader h1 {
+    color: var(--color-white);
+    margin-bottom: var(--space-4);
+}
+
+.pageHeader p {
+    font-size: var(--text-lg);
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* FAQ Section */
+.faqSection {
+    padding: var(--space-12) 0 var(--space-16);
+}
+
+.faqGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .faqGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* FAQ Card */
+.faqCard {
+    background: var(--color-white);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-card);
+}
+
+.faqCardWide {
+    grid-column: 1 / -1;
+}
+
+.faqCard h2 {
+    font-size: var(--text-xl);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--color-rose-light);
+}
+
+.faqCard h3 {
+    font-size: var(--text-base);
+    color: var(--color-text);
+    margin-bottom: var(--space-3);
+}
+
+/* FAQ List */
+.faqList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.faqList li {
+    position: relative;
+    padding: var(--space-2) 0 var(--space-2) var(--space-6);
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.faqList li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-rose);
+    font-weight: bold;
+}
+
+.faqList li strong {
+    color: var(--color-text);
+}
+
+.faqList li em {
+    font-style: italic;
+    opacity: 0.85;
+}
+
+.faqText {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Price List */
+.priceList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.priceItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4);
+    background: var(--color-cream-light);
+    border-radius: var(--radius-lg);
+}
+
+.priceLabel {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+.priceValue {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+/* Capacity Info */
+.capacityInfo {
+    text-align: center;
+    padding: var(--space-4);
+}
+
+.capacityMain {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-2);
+}
+
+.capacityDetail {
+    color: var(--color-text-light);
+    font-size: var(--text-base);
+}
+
+/* Package Content */
+.packageContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+    .packageContent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.packageSection h3 {
+    margin-bottom: var(--space-3);
+}
+
+/* Check List */
+.checkList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.checkList li {
+    position: relative;
+    padding: var(--space-2) 0 var(--space-2) 1.75rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+.checkList li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    width: 1.25rem;
+    color: var(--color-wave-mid);
+    font-weight: bold;
+}
+
+/* Highlight */
+.highlight {
+    background: linear-gradient(135deg, var(--color-rose-light), var(--color-cream));
+    padding: var(--space-3) var(--space-4) var(--space-3) var(--space-6) !important;
+    border-radius: var(--radius-lg);
+    margin-top: var(--space-2);
+    font-weight: 500;
+    color: var(--color-text) !important;
+}
+
+.highlight::before {
+    content: '→' !important;
+    color: var(--color-primary-dark) !important;
+}

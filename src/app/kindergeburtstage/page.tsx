@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -9,10 +10,19 @@ export const metadata: Metadata = {
 export default function Kindergeburtstage() {
     return (
         <div className={styles.page}>
-            {/* Page Header */}
+            {/* Page Header with Hero Image */}
             <section className={styles.pageHeader}>
+                <Image
+                    src="/images/showcase-party.jpg"
+                    alt="Liebevoll dekorierte Tischdeko bei einem Kindergeburtstag"
+                    fill
+                    priority
+                    className={styles.headerImage}
+                    sizes="100vw"
+                />
+                <div className={styles.headerOverlay}></div>
                 <div className={styles.container}>
-                    <h1>🎉 Kindergeburtstage bei uns</h1>
+                    <h1>Kindergeburtstage bei uns</h1>
                     <p>
                         Wir bieten liebevoll gestaltete Kindergeburtstagsfeiern mit verschiedenen
                         Mottos an – ideal zum Spielen, Feiern und Wohlfühlen.
@@ -23,7 +33,7 @@ export default function Kindergeburtstage() {
             {/* Pricing Section */}
             <section className={styles.pricing}>
                 <div className={styles.container}>
-                    <h2>💶 Preise</h2>
+                    <h2>Preise</h2>
                     <div className={styles.priceCards}>
                         <div className={styles.priceCard}>
                             <div className={styles.priceLabel}>Montag – Donnerstag</div>
@@ -42,7 +52,19 @@ export default function Kindergeburtstage() {
             {/* What's Included Section */}
             <section className={styles.included}>
                 <div className={styles.container}>
-                    <h2>🎁 Im Geburtstagspaket enthalten</h2>
+                    <div className={styles.includedHeader}>
+                        <h2>Im Geburtstagspaket enthalten</h2>
+                        <p>Alles was ihr für eine unvergessliche Feier braucht</p>
+                    </div>
+                    <div className={styles.includedImageWrapper}>
+                        <Image
+                            src="/images/gallery-mermaid.jpg"
+                            alt="Meerjungfrau Party Dekoration"
+                            fill
+                            sizes="100vw"
+                            style={{ objectFit: 'cover' }}
+                        />
+                    </div>
                     <div className={styles.includedGrid}>
                         <div className={styles.includedItem}>
                             <span className={styles.icon}>🏠</span>

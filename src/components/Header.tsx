@@ -20,13 +20,16 @@ export default function Header() {
             {/* Top Contact Bar */}
             <div className={styles.topBar}>
                 <div className={styles.topBarContent}>
-                    <a href="tel:+4917659960500" className={styles.topBarLink}>
-                        <span className={styles.icon}>📞</span>
-                        0176 59960500
-                    </a>
                     <a href="mailto:hallo@vierelfen.com" className={styles.topBarLink}>
                         <span className={styles.icon}>✉️</span>
                         hallo@vierelfen.com
+                    </a>
+                    <Link href="/faq" className={styles.topBarLink}>
+                        Häufig gestellte Fragen
+                    </Link>
+                    <a href="tel:+4917659960500" className={styles.topBarLink}>
+                        <span className={styles.icon}>📞</span>
+                        0176 59960500
                     </a>
                 </div>
             </div>

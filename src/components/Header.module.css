@@ -13,8 +13,8 @@
 
 .topBarContent {
     display: flex;
-    justify-content: center;
-    gap: var(--space-6);
+    justify-content: space-between;
+    align-items: center;
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-padding);
@@ -184,9 +184,6 @@
 
 /* Desktop Styles */
 @media (min-width: 768px) {
-    .topBarContent {
-        justify-content: flex-start;
-    }
 
     .navLinksLeft,
     .navLinksRight {
