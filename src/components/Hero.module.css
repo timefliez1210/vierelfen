@@ -2,11 +2,29 @@
     position: relative;
     min-height: 70vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-start;
     overflow: hidden;
-    padding: var(--space-16) var(--container-padding);
-    padding-bottom: var(--space-24);
+    padding: var(--space-16) 0;
+    padding-bottom: 12vh;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        align-items: center;
+        padding-bottom: var(--space-24);
+    }
+}
+
+.hero.subpage {
+    min-height: 400px;
+    padding: var(--space-20) 0 var(--space-16);
+}
+
+@media (min-width: 768px) {
+    .hero.subpage {
+        min-height: 450px;
+    }
 }
 
 /* Background */
@@ -14,14 +32,21 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg,
-            #6A9BB5 0%,
-            #5B8FA8 30%,
-            #4A7C94 100%);
+            var(--color-wave-light) 0%,
+            var(--color-wave-mid) 30%,
+            var(--color-wave-dark) 100%);
     z-index: 0;
 }
 
 .backgroundImage {
     object-fit: cover;
+    object-position: right center !important;
+}
+
+@media (min-width: 768px) {
+    .backgroundImage {
+        object-position: var(--image-position, center) !important;
+    }
 }
 
 .background:has(.backgroundImage)::after {
@@ -29,8 +54,8 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg,
-            rgba(61, 61, 61, 0.4) 0%,
-            rgba(61, 61, 61, 0.5) 100%);
+            var(--color-overlay) 0%,
+            var(--color-overlay-dark) 100%);
     z-index: 1;
 }
 
@@ -119,8 +144,16 @@
 .content {
     position: relative;
     z-index: 1;
-    text-align: center;
+    text-align: left;
     max-width: 800px;
+    width: 100%;
+    padding-left: var(--container-padding);
+}
+
+@media (min-width: 768px) {
+    .content {
+        padding-left: calc((100vw - var(--container-max)) / 2 + var(--container-padding));
+    }
 }
 
 .title {
@@ -146,18 +179,18 @@
     font-family: var(--font-primary);
     font-size: var(--text-lg);
     font-weight: 700;
-    color: #5D4037;
-    background: linear-gradient(135deg, #FFD93D, #FFB347);
+    color: var(--color-cta-text);
+    background: linear-gradient(135deg, var(--color-cta-gradient-start), var(--color-cta-gradient-end));
     border: 3px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius-full);
     text-decoration: none;
-    box-shadow: 0 6px 25px rgba(255, 179, 71, 0.4);
+    box-shadow: 0 6px 25px var(--color-cta-shadow);
     transition: all var(--transition-base);
 }
 
 .cta:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 35px rgba(255, 179, 71, 0.5);
+    box-shadow: 0 10px 35px var(--color-cta-shadow-hover);
 }
 
 /* Bottom wave transition */

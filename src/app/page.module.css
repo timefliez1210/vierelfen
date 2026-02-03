@@ -12,7 +12,7 @@
 
 .introHeading {
   text-align: center;
-  color: var(--color-rose-dark);
+  color: var(--color-primary-dark);
   margin-bottom: var(--space-8);
 }
 
@@ -126,17 +126,17 @@
   font-family: var(--font-primary);
   font-size: var(--text-lg);
   font-weight: 700;
-  color: #5D4037;
-  background: linear-gradient(135deg, #FFD93D, #FFB347);
+  color: var(--color-cta-text);
+  background: linear-gradient(135deg, var(--color-cta-gradient-start), var(--color-cta-gradient-end));
   border-radius: var(--radius-full);
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(255, 179, 71, 0.3);
+  box-shadow: 0 4px 15px var(--color-cta-shadow);
   transition: all var(--transition-base);
 }
 
 .cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 179, 71, 0.4);
+  box-shadow: 0 6px 20px var(--color-cta-shadow-hover);
 }
 
 /* Why Choose Us Section */
@@ -212,9 +212,10 @@
   margin-bottom: var(--space-3);
 }
 
-.feature h4 {
-  color: var(--color-primary-dark);
+.feature h3 {
+  color: var(--color-text);
   margin-bottom: var(--space-2);
+  font-size: var(--text-lg);
 }
 
 .feature p {
@@ -231,7 +232,7 @@
 }
 
 .finalCta h2 {
-  color: var(--color-rose-dark);
+  color: var(--color-primary-dark);
   margin-bottom: var(--space-4);
 }
 
@@ -252,16 +253,16 @@
   font-family: var(--font-primary);
   font-size: var(--text-xl);
   font-weight: 700;
-  color: #5D4037;
-  background: linear-gradient(135deg, #FFD93D, #FFB347);
+  color: var(--color-cta-text);
+  background: linear-gradient(135deg, var(--color-cta-gradient-start), var(--color-cta-gradient-end));
   border-radius: var(--radius-full);
   text-decoration: none;
-  box-shadow: 0 6px 25px rgba(255, 179, 71, 0.4);
+  box-shadow: 0 6px 25px var(--color-cta-shadow);
   transition: all var(--transition-base);
 }
 
 .ctaLarge:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 35px rgba(255, 179, 71, 0.5);
+  box-shadow: 0 10px 35px var(--color-cta-shadow-hover);
 }
 

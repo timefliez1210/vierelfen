@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Hero from '@/components/Hero';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -9,15 +10,12 @@ export const metadata: Metadata = {
 export default function Ablauf() {
     return (
         <div className={styles.page}>
-            {/* Page Header */}
-            <section className={styles.pageHeader}>
-                <div className={styles.container}>
-                    <h1>📝 Ablauf & Regeln</h1>
-                    <p>
-                        Alles was ihr über die Buchung, Anzahlung und unsere Regeln wissen müsst
-                    </p>
-                </div>
-            </section>
+            <Hero
+                title="Ablauf & Regeln"
+                subtitle="Alles was ihr über die Buchung, Anzahlung und unsere Regeln wissen müsst"
+                backgroundImage="/images/school-party.jpg"
+                variant="subpage"
+            />
 
             {/* Deposit Section */}
             <section className={styles.section}>

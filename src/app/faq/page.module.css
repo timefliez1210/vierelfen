@@ -9,26 +9,6 @@
     padding: 0 var(--container-padding);
 }
 
-/* Page Header */
-.pageHeader {
-    background: linear-gradient(135deg, var(--color-wave-mid), var(--color-wave-dark));
-    color: var(--color-white);
-    padding: var(--space-16) 0;
-    text-align: center;
-}
-
-.pageHeader h1 {
-    color: var(--color-white);
-    margin-bottom: var(--space-4);
-}
-
-.pageHeader p {
-    font-size: var(--text-lg);
-    opacity: 0.95;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
 /* FAQ Section */
 .faqSection {
     padding: var(--space-12) 0 var(--space-16);
@@ -63,7 +43,7 @@
     color: var(--color-primary-dark);
     margin-bottom: var(--space-4);
     padding-bottom: var(--space-3);
-    border-bottom: 2px solid var(--color-rose-light);
+    border-bottom: 2px solid var(--color-purple-light);
 }
 
 .faqCard h3 {
@@ -90,7 +70,7 @@
     content: '•';
     position: absolute;
     left: 0;
-    color: var(--color-rose);
+    color: var(--color-purple);
     font-weight: bold;
 }
 
@@ -196,7 +176,7 @@
 
 /* Highlight */
 .highlight {
-    background: linear-gradient(135deg, var(--color-rose-light), var(--color-cream));
+    background: linear-gradient(135deg, var(--color-purple-light), var(--color-cream));
     padding: var(--space-3) var(--space-4) var(--space-3) var(--space-6) !important;
     border-radius: var(--radius-lg);
     margin-top: var(--space-2);

@@ -1,35 +1,101 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Header.module.css';
+import { CONTACT, NAV_LINKS, ROUTES } from '@/constants';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isHelpOpen, setIsHelpOpen] = useState(false);
+    const [isScrolling, setIsScrolling] = useState(false);
+    const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const helpWrapperRef = useRef<HTMLDivElement | null>(null);
 
-    const navLinks = [
-        { href: '/', label: 'Home' },
-        { href: '/kindergeburtstage', label: 'Preise' },
-        { href: '/ablauf', label: 'Regeln' },
-        { href: '/kontakt', label: 'Kontakt' },
-    ];
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolling(true);
+
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+
+            scrollTimeoutRef.current = setTimeout(() => {
+                setIsScrolling(false);
+            }, 150);
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (scrollTimeoutRef.current) {
+                clearTimeout(scrollTimeoutRef.current);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (isHelpOpen && helpWrapperRef.current && !helpWrapperRef.current.contains(event.target as Node)) {
+                setIsHelpOpen(false);
+            }
+        };
+
+        document.addEventListener('click', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, [isHelpOpen]);
+
+    const navLinks = NAV_LINKS;
 
     return (
         <header className={styles.header}>
-            {/* Top Contact Bar */}
+            {/* Top Contact Bar (Desktop only) */}
             <div className={styles.topBar}>
                 <div className={styles.topBarContent}>
-                    <a href="mailto:hallo@vierelfen.com" className={styles.topBarLink}>
+                    <a href={`mailto:${CONTACT.email}`} className={styles.topBarLink}>
                         <span className={styles.icon}>✉️</span>
-                        hallo@vierelfen.com
+                        {CONTACT.email}
                     </a>
-                    <Link href="/faq" className={styles.topBarLink}>
+                    <Link href={ROUTES.faq} className={styles.topBarLink}>
                         Häufig gestellte Fragen
                     </Link>
-                    <a href="tel:+4917659960500" className={styles.topBarLink}>
-                        <span className={styles.icon}>📞</span>
-                        0176 59960500
+                    <a href={`tel:${CONTACT.phoneLink}`} className={styles.topBarLink}>
+                        <svg className={styles.iconSvg} viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        {CONTACT.phone}
+                    </a>
+                </div>
+            </div>
+
+            {/* Floating Help Button (Mobile only) */}
+            <div className={styles.helpButtonWrapper} ref={helpWrapperRef}>
+                <button
+                    className={`${styles.helpButton} ${isHelpOpen ? styles.open : ''} ${isScrolling && !isHelpOpen ? styles.pulsing : ''}`}
+                    onClick={() => setIsHelpOpen(!isHelpOpen)}
+                    aria-label="Hilfe"
+                >
+                    <span className={styles.helpIcon}>{isHelpOpen ? '✕' : '?'}</span>
+                </button>
+                <div className={`${styles.helpMenu} ${isHelpOpen ? styles.open : ''}`}>
+                    <Link
+                        href={ROUTES.faq}
+                        className={styles.helpLink}
+                        onClick={() => setIsHelpOpen(false)}
+                    >
+                        <span className={styles.helpLinkIcon}>❓</span>
+                        Häufig gestellte Fragen
+                    </Link>
+                    <a href={`tel:${CONTACT.phoneLink}`} className={styles.helpLink}>
+                        <svg className={styles.helpLinkSvg} viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        {CONTACT.phone}
                     </a>
                 </div>
             </div>
@@ -56,6 +122,7 @@ export default function Header() {
                             width={160}
                             height={80}
                             priority
+                            quality={80}
                         />
                     </Link>
 

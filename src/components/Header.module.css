@@ -5,10 +5,17 @@
     background: var(--color-white);
 }
 
-/* Top Contact Bar */
+/* Top Contact Bar (Hidden on mobile) */
 .topBar {
-    background: var(--color-rose-light);
+    display: none;
+    background: var(--color-purple);
     padding: var(--space-2) 0;
+}
+
+@media (min-width: 768px) {
+    .topBar {
+        display: block;
+    }
 }
 
 .topBarContent {
@@ -24,19 +31,25 @@
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    color: var(--color-text);
+    color: var(--color-white);
     font-size: var(--text-sm);
-    font-weight: 500;
+    font-weight: 700;
     text-decoration: none;
-    transition: color var(--transition-fast);
+    transition: opacity var(--transition-fast);
 }
 
 .topBarLink:hover {
-    color: var(--color-primary-dark);
+    opacity: 0.8;
 }
 
 .icon {
     font-size: var(--text-base);
+}
+
+.iconSvg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
 }
 
 /* Main Navigation */
@@ -48,10 +61,17 @@
 .navContent {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
     max-width: var(--container-max);
     margin: 0 auto;
     padding: var(--space-3) var(--container-padding);
+}
+
+@media (min-width: 768px) {
+    .navContent {
+        justify-content: space-between;
+    }
 }
 
 /* Logo */
@@ -94,12 +114,12 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--color-rose);
+    background: var(--color-purple);
     transition: width var(--transition-base);
 }
 
 .navLink:hover {
-    color: var(--color-rose);
+    color: var(--color-purple);
 }
 
 .navLink:hover::after {
@@ -117,6 +137,8 @@
     border: none;
     cursor: pointer;
     padding: 0;
+    position: absolute;
+    right: var(--container-padding);
 }
 
 .menuIcon {
@@ -152,7 +174,7 @@
 .mobileMenu {
     display: none;
     background: var(--color-white);
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--color-border-light);
     padding: var(--space-4);
 }
 
@@ -217,5 +239,163 @@
 @media (min-width: 1024px) {
     .logo img {
         height: 80px;
+    }
+}
+
+/* Floating Help Button (Mobile only) */
+.helpButtonWrapper {
+    position: fixed;
+    bottom: var(--space-6);
+    right: var(--space-6);
+    z-index: 1001;
+}
+
+.helpButton {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #7c3aed 100%);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    box-shadow:
+        0 4px 20px rgba(139, 92, 246, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.helpButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.helpButton:hover::before {
+    left: 100%;
+}
+
+.helpButton:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow:
+        0 8px 30px rgba(139, 92, 246, 0.5),
+        0 4px 12px rgba(0, 0, 0, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.helpButton:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.helpButton.open {
+    background: linear-gradient(135deg, #4c1d95 0%, #5b21b6 50%, #6d28d9 100%);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.helpButton.pulsing {
+    animation: purpleGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes purpleGlow {
+    0%, 100% {
+        box-shadow:
+            0 0 0 0 rgba(139, 92, 246, 0.6),
+            0 4px 20px rgba(139, 92, 246, 0.4),
+            0 2px 8px rgba(0, 0, 0, 0.1),
+            inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        box-shadow:
+            0 0 0 10px rgba(139, 92, 246, 0),
+            0 6px 25px rgba(139, 92, 246, 0.5),
+            0 3px 10px rgba(0, 0, 0, 0.12),
+            inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    }
+}
+
+.helpIcon {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-white);
+    line-height: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.helpButton:hover .helpIcon {
+    transform: scale(1.1);
+}
+
+.helpButton.open .helpIcon {
+    transform: rotate(90deg);
+}
+
+.helpMenu {
+    position: absolute;
+    bottom: calc(100% + var(--space-3));
+    right: 0;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    padding: var(--space-3);
+    min-width: 250px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all var(--transition-base);
+}
+
+.helpMenu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.helpLink {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    border-radius: var(--radius-lg);
+    transition: background var(--transition-fast);
+}
+
+.helpLink:hover {
+    background: var(--color-cream);
+}
+
+.helpLinkIcon {
+    font-size: 1.25rem;
+}
+
+.helpLinkSvg {
+    width: 20px;
+    height: 20px;
+    fill: var(--color-purple);
+}
+
+/* Hide help button on desktop */
+@media (min-width: 768px) {
+    .helpButtonWrapper {
+        display: none;
     }
 }

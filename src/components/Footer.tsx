@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './Footer.module.css';
+import { CONTACT, OPENING_HOURS, FOOTER_LINKS } from '@/constants';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -11,22 +12,22 @@ export default function Footer() {
                     <div className={styles.grid}>
                         {/* Contact Info */}
                         <div className={styles.column}>
-                            <h4>Kontakt</h4>
+                            <h3>Kontakt</h3>
                             <ul className={styles.contactList}>
                                 <li>
                                     <span className={styles.icon}>📍</span>
-                                    <span>Junkersstraße 11A<br />31137 Hildesheim</span>
+                                    <span>{CONTACT.address.street}<br />{CONTACT.address.zip} {CONTACT.address.city}</span>
                                 </li>
                                 <li>
-                                    <a href="tel:+4917659960500">
+                                    <a href={`tel:${CONTACT.phoneLink}`}>
                                         <span className={styles.icon}>📞</span>
-                                        <span>0176 59960500</span>
+                                        <span>{CONTACT.phone}</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="mailto:hallo@vierelfen.com">
+                                    <a href={`mailto:${CONTACT.email}`}>
                                         <span className={styles.icon}>✉️</span>
-                                        <span>hallo@vierelfen.com</span>
+                                        <span>{CONTACT.email}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -34,25 +35,27 @@ export default function Footer() {
 
                         {/* Quick Links */}
                         <div className={styles.column}>
-                            <h4>Informationen</h4>
+                            <h3>Informationen</h3>
                             <ul className={styles.linkList}>
-                                <li><Link href="/kindergeburtstage">Kindergeburtstage</Link></li>
-                                <li><Link href="/ablauf">Ablauf & Regeln</Link></li>
-                                <li><Link href="/kontakt">Kontakt & Buchung</Link></li>
+                                {FOOTER_LINKS.info.map((link) => (
+                                    <li key={link.href}>
+                                        <Link href={link.href}>{link.label}</Link>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
 
                         {/* Opening Hours */}
                         <div className={styles.column}>
-                            <h4>Öffnungszeiten</h4>
+                            <h3>Öffnungszeiten</h3>
                             <ul className={styles.hoursList}>
                                 <li>
                                     <span>Feiern & Events</span>
-                                    <span>Nach Vereinbarung</span>
+                                    <span>{OPENING_HOURS.events}</span>
                                 </li>
                                 <li>
                                     <span>Geburtstage</span>
-                                    <span>Bis 19:00 Uhr</span>
+                                    <span>Bis {OPENING_HOURS.closingTime}</span>
                                 </li>
                             </ul>
                         </div>
@@ -63,10 +66,11 @@ export default function Footer() {
             {/* Bottom Bar */}
             <div className={styles.footerBottom}>
                 <div className={styles.container}>
-                    <p>&copy; {currentYear} Vier Elfen Kinderlounge Hildesheim</p>
+                    <p>&copy; {currentYear} {CONTACT.fullName}</p>
                     <nav className={styles.legalLinks}>
-                        <Link href="/impressum">Impressum</Link>
-                        <Link href="/datenschutz">Datenschutz</Link>
+                        {FOOTER_LINKS.legal.map((link) => (
+                            <Link key={link.href} href={link.href}>{link.label}</Link>
+                        ))}
                     </nav>
                 </div>
             </div>

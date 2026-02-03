@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
+import Hero from '@/components/Hero';
 import styles from './page.module.css';
+import { PRICING, CAPACITY, OPENING_HOURS } from '@/constants';
 
 export const metadata: Metadata = {
     title: 'Kindergeburtstage & Preise',
@@ -10,25 +12,12 @@ export const metadata: Metadata = {
 export default function Kindergeburtstage() {
     return (
         <div className={styles.page}>
-            {/* Page Header with Hero Image */}
-            <section className={styles.pageHeader}>
-                <Image
-                    src="/images/showcase-party.jpg"
-                    alt="Liebevoll dekorierte Tischdeko bei einem Kindergeburtstag"
-                    fill
-                    priority
-                    className={styles.headerImage}
-                    sizes="100vw"
-                />
-                <div className={styles.headerOverlay}></div>
-                <div className={styles.container}>
-                    <h1>Kindergeburtstage bei uns</h1>
-                    <p>
-                        Wir bieten liebevoll gestaltete Kindergeburtstagsfeiern mit verschiedenen
-                        Mottos an – ideal zum Spielen, Feiern und Wohlfühlen.
-                    </p>
-                </div>
-            </section>
+            <Hero
+                title="Kindergeburtstage bei uns"
+                subtitle="Wir bieten liebevoll gestaltete Kindergeburtstagsfeiern mit verschiedenen Mottos an – ideal zum Spielen, Feiern und Wohlfühlen."
+                backgroundImage="/images/showcase-party.jpg"
+                variant="subpage"
+            />
 
             {/* Pricing Section */}
             <section className={styles.pricing}>
@@ -36,14 +25,14 @@ export default function Kindergeburtstage() {
                     <h2>Preise</h2>
                     <div className={styles.priceCards}>
                         <div className={styles.priceCard}>
-                            <div className={styles.priceLabel}>Montag – Donnerstag</div>
-                            <div className={styles.priceAmount}>330 €</div>
-                            <div className={styles.priceDuration}>4 Stunden</div>
+                            <div className={styles.priceLabel}>{PRICING.weekday.label}</div>
+                            <div className={styles.priceAmount}>{PRICING.weekday.priceFormatted}</div>
+                            <div className={styles.priceDuration}>{PRICING.duration}</div>
                         </div>
                         <div className={`${styles.priceCard} ${styles.highlighted}`}>
-                            <div className={styles.priceLabel}>Freitag – Sonntag & Feiertage</div>
-                            <div className={styles.priceAmount}>390 €</div>
-                            <div className={styles.priceDuration}>4 Stunden</div>
+                            <div className={styles.priceLabel}>{PRICING.weekend.label}</div>
+                            <div className={styles.priceAmount}>{PRICING.weekend.priceFormatted}</div>
+                            <div className={styles.priceDuration}>{PRICING.duration}</div>
                         </div>
                     </div>
                 </div>
@@ -58,9 +47,10 @@ export default function Kindergeburtstage() {
                     </div>
                     <div className={styles.includedImageWrapper}>
                         <Image
-                            src="/images/gallery-mermaid.jpg"
-                            alt="Meerjungfrau Party Dekoration"
+                            src="/images/playroom-shop.jpg"
+                            alt="Spielbereich mit Kaufladen"
                             fill
+                            quality={70}
                             sizes="100vw"
                             style={{ objectFit: 'cover' }}
                         />
@@ -118,17 +108,17 @@ export default function Kindergeburtstage() {
                     <h2>👨‍👩‍👧‍👦 Kapazität</h2>
                     <div className={styles.capacityCard}>
                         <div className={styles.capacityMain}>
-                            <span className={styles.capacityNumber}>30</span>
+                            <span className={styles.capacityNumber}>{CAPACITY.total}</span>
                             <span className={styles.capacityLabel}>Personen maximal</span>
                         </div>
                         <div className={styles.capacityDetails}>
                             <div className={styles.capacityItem}>
                                 <span>👶</span>
-                                <span>Höchstens 15 Kinder</span>
+                                <span>Höchstens {CAPACITY.maxChildren} Kinder</span>
                             </div>
                             <div className={styles.capacityItem}>
                                 <span>👨‍👩‍👧</span>
-                                <span>Höchstens 15 Erwachsene</span>
+                                <span>Höchstens {CAPACITY.maxAdults} Erwachsene</span>
                             </div>
                         </div>
                     </div>
@@ -142,11 +132,11 @@ export default function Kindergeburtstage() {
                     <div className={styles.bookingGrid}>
                         <div className={styles.bookingItem}>
                             <h4>Buchungsdauer</h4>
-                            <p>4 Stunden</p>
+                            <p>{PRICING.duration}</p>
                         </div>
                         <div className={styles.bookingItem}>
                             <h4>Früher kommen</h4>
-                            <p>30 Minuten vor der Feier zur Vorbereitung</p>
+                            <p>{PRICING.earlyArrival} vor der Feier zur Vorbereitung</p>
                         </div>
                         <div className={styles.bookingItem}>
                             <h4>Beginn</h4>
@@ -154,7 +144,7 @@ export default function Kindergeburtstage() {
                         </div>
                         <div className={styles.bookingItem}>
                             <h4>Öffnungszeiten</h4>
-                            <p>Bis 19:00 Uhr (andere Zeiten nach Absprache möglich)</p>
+                            <p>Bis {OPENING_HOURS.closingTime} ({OPENING_HOURS.note})</p>
                         </div>
                     </div>
                 </div>

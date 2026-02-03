@@ -25,6 +25,7 @@ export default function Home() {
               src="/images/gallery-unicorn.jpg"
               alt="Einhorn Party Setup im Freien"
               fill
+              quality={70}
               sizes="100vw"
               style={{ objectFit: 'cover' }}
             />
@@ -47,6 +48,7 @@ export default function Home() {
                 src="/images/gallery-mermaid.jpg"
                 alt="Meerjungfrau Motto-Party mit Ballondekoration"
                 fill
+                quality={70}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: 'cover' }}
               />
@@ -71,9 +73,10 @@ export default function Home() {
           <div className={`${styles.serviceRow} ${styles.reversed}`}>
             <div className={styles.serviceImage}>
               <Image
-                src="/images/gallery-playarea.jpg"
-                alt="Spielbereich mit Kicker und Spielzeug"
+                src="/images/venue-slide.jpg"
+                alt="Spielbereich mit Rutsche"
                 fill
+                quality={70}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: 'cover' }}
               />
@@ -112,17 +115,17 @@ export default function Home() {
             <div className={styles.features}>
               <div className={styles.feature}>
                 <span className={styles.featureIcon}>🏠</span>
-                <h4>Exklusive Nutzung</h4>
+                <h3>Exklusive Nutzung</h3>
                 <p>Unser gesamter Raum gehört nur euch – ohne andere Gäste</p>
               </div>
               <div className={styles.feature}>
                 <span className={styles.featureIcon}>🎨</span>
-                <h4>Motto-Feiern</h4>
+                <h3>Motto-Feiern</h3>
                 <p>Wählt aus verschiedenen Themen für eure perfekte Party</p>
               </div>
               <div className={styles.feature}>
                 <span className={styles.featureIcon}>😊</span>
-                <h4>Stressfrei</h4>
+                <h3>Stressfrei</h3>
                 <p>Wir kümmern uns um die Deko – ihr genießt die Feier</p>
               </div>
             </div>

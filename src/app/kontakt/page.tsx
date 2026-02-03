@@ -5,7 +5,9 @@ import DatePicker from 'react-datepicker';
 import { registerLocale } from 'react-datepicker';
 import { de } from 'date-fns/locale/de';
 import 'react-datepicker/dist/react-datepicker.css';
+import Hero from '@/components/Hero';
 import styles from './page.module.css';
+import { CONTACT, OPENING_HOURS, MAP_EMBED_URL, EVENT_TYPES, CAPACITY } from '@/constants';
 
 registerLocale('de', de);
 
@@ -33,12 +35,12 @@ export default function Kontakt() {
     if (formSubmitted) {
         return (
             <div className={styles.page}>
-                <section className={styles.pageHeader}>
-                    <div className={styles.container}>
-                        <h1>✅ Vielen Dank!</h1>
-                        <p>Eure Anfrage wurde erfolgreich gesendet. Wir melden uns schnellstmöglich bei euch!</p>
-                    </div>
-                </section>
+                <Hero
+                    title="Vielen Dank!"
+                    subtitle="Eure Anfrage wurde erfolgreich gesendet. Wir melden uns schnellstmöglich bei euch!"
+                    backgroundImage="/images/zoo-playarea.jpg"
+                    variant="subpage"
+                />
                 <section className={styles.thankYou}>
                     <div className={styles.container}>
                         <a href="/" className={styles.backButton}>← Zurück zur Startseite</a>
@@ -50,15 +52,12 @@ export default function Kontakt() {
 
     return (
         <div className={styles.page}>
-            {/* Page Header */}
-            <section className={styles.pageHeader}>
-                <div className={styles.container}>
-                    <h1>📬 Kontakt & Buchung</h1>
-                    <p>
-                        Habt ihr Fragen oder möchtet eine Feier buchen? Füllt einfach das Formular aus!
-                    </p>
-                </div>
-            </section>
+            <Hero
+                title="Kontakt & Buchung"
+                subtitle="Habt ihr Fragen oder möchtet eine Feier buchen? Füllt einfach das Formular aus!"
+                backgroundImage="/images/zoo-playarea.jpg"
+                variant="subpage"
+            />
 
             {/* Contact Content */}
             <section className={styles.contactSection}>
@@ -137,10 +136,9 @@ export default function Kontakt() {
                                     <label htmlFor="event-type" className={styles.label}>Art der Feier</label>
                                     <select id="event-type" name="event-type" className={styles.select}>
                                         <option value="">Bitte auswählen</option>
-                                        <option value="kindergeburtstag">Kindergeburtstag</option>
-                                        <option value="babyparty">Babyparty</option>
-                                        <option value="taufe">Taufe</option>
-                                        <option value="sonstige">Sonstige Feier</option>
+                                        {EVENT_TYPES.map((type) => (
+                                            <option key={type.value} value={type.value}>{type.label}</option>
+                                        ))}
                                     </select>
                                 </div>
 
@@ -153,7 +151,7 @@ export default function Kontakt() {
                                         className={styles.input}
                                         placeholder="z.B. 20"
                                         min="1"
-                                        max="30"
+                                        max={CAPACITY.total}
                                     />
                                 </div>
 
@@ -179,42 +177,42 @@ export default function Kontakt() {
                             <div className={styles.infoCard}>
                                 <h3>📍 Adresse</h3>
                                 <p>
-                                    Vier Elfen Kinderlounge<br />
-                                    Junkersstraße 11A<br />
-                                    31137 Hildesheim
+                                    {CONTACT.businessName}<br />
+                                    {CONTACT.address.street}<br />
+                                    {CONTACT.address.zip} {CONTACT.address.city}
                                 </p>
                             </div>
 
                             <div className={styles.infoCard}>
                                 <h3>📞 Direkter Kontakt</h3>
                                 <p>
-                                    <a href="tel:+4917659960500">0176 59960500</a>
+                                    <a href={`tel:${CONTACT.phoneLink}`}>{CONTACT.phone}</a>
                                 </p>
                                 <p>
-                                    <a href="mailto:hallo@vierelfen.com">hallo@vierelfen.com</a>
+                                    <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
                                 </p>
                             </div>
 
                             <div className={styles.infoCard}>
                                 <h3>🕐 Öffnungszeiten</h3>
                                 <p>
-                                    Feiern: Nach Vereinbarung<br />
-                                    Spätestens bis 19:00 Uhr<br />
-                                    <small>(andere Zeiten nach Absprache)</small>
+                                    Feiern: {OPENING_HOURS.events}<br />
+                                    Spätestens bis {OPENING_HOURS.closingTime}<br />
+                                    <small>({OPENING_HOURS.note})</small>
                                 </p>
                             </div>
 
                             {/* Map placeholder */}
                             <div className={styles.mapPlaceholder}>
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2442.8!2d9.95!3d52.17!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDEwJzEyLjAiTiA5wrA1NycwMC4wIkU!5e0!3m2!1sde!2sde!4v1234567890"
+                                    src={MAP_EMBED_URL}
                                     width="100%"
                                     height="200"
                                     style={{ border: 0, borderRadius: 'var(--radius-xl)' }}
                                     allowFullScreen
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
-                                    title="Standort Vier Elfen Kinderlounge"
+                                    title={`Standort ${CONTACT.businessName}`}
                                 />
                             </div>
                         </div>
