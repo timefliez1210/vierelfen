@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Hero from '@/components/Hero';
+import Button from '@/components/Button';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -116,9 +117,9 @@ export default function Ablauf() {
                 <div className={styles.container}>
                     <h2>Noch Fragen?</h2>
                     <p>Wir sind für euch da und beantworten gerne alle eure Fragen!</p>
-                    <a href="/kontakt" className={styles.ctaButton}>
-                        Kontakt aufnehmen 📞
-                    </a>
+                    <Button href="/kontakt" size="large">
+                        Kontakt aufnehmen
+                    </Button>
                 </div>
             </section>
         </div>

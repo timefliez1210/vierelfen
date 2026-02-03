@@ -254,11 +254,11 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #7c3aed 100%);
+    background: linear-gradient(135deg, #8A9F94 0%, #69867C 50%, #526960 100%);
     border: 2px solid rgba(255, 255, 255, 0.2);
     cursor: pointer;
     box-shadow:
-        0 4px 20px rgba(139, 92, 246, 0.4),
+        0 4px 20px rgba(105, 134, 124, 0.4),
         0 2px 8px rgba(0, 0, 0, 0.1),
         inset 0 1px 1px rgba(255, 255, 255, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -292,7 +292,7 @@
 .helpButton:hover {
     transform: translateY(-2px) scale(1.03);
     box-shadow:
-        0 8px 30px rgba(139, 92, 246, 0.5),
+        0 8px 30px rgba(105, 134, 124, 0.5),
         0 4px 12px rgba(0, 0, 0, 0.15),
         inset 0 1px 1px rgba(255, 255, 255, 0.25);
 }
@@ -302,26 +302,26 @@
 }
 
 .helpButton.open {
-    background: linear-gradient(135deg, #4c1d95 0%, #5b21b6 50%, #6d28d9 100%);
+    background: linear-gradient(135deg, #3d504a 0%, #526960 50%, #69867C 100%);
     border-color: rgba(255, 255, 255, 0.1);
 }
 
 .helpButton.pulsing {
-    animation: purpleGlow 1.5s ease-in-out infinite;
+    animation: sageGlow 1.5s ease-in-out infinite;
 }
 
-@keyframes purpleGlow {
+@keyframes sageGlow {
     0%, 100% {
         box-shadow:
-            0 0 0 0 rgba(139, 92, 246, 0.6),
-            0 4px 20px rgba(139, 92, 246, 0.4),
+            0 0 0 0 rgba(105, 134, 124, 0.6),
+            0 4px 20px rgba(105, 134, 124, 0.4),
             0 2px 8px rgba(0, 0, 0, 0.1),
             inset 0 1px 1px rgba(255, 255, 255, 0.2);
     }
     50% {
         box-shadow:
-            0 0 0 10px rgba(139, 92, 246, 0),
-            0 6px 25px rgba(139, 92, 246, 0.5),
+            0 0 0 10px rgba(105, 134, 124, 0),
+            0 6px 25px rgba(105, 134, 124, 0.5),
             0 3px 10px rgba(0, 0, 0, 0.12),
             inset 0 1px 1px rgba(255, 255, 255, 0.2);
     }

@@ -87,28 +87,10 @@
     overflow: hidden;
 }
 
-.balloon,
-.star,
-.confetti,
-.heart {
+.star {
     position: absolute;
     font-size: 2rem;
     opacity: 0.8;
-}
-
-.balloon1 {
-    left: 8%;
-    top: 20%;
-    font-size: 2.5rem;
-    animation: float 4s ease-in-out infinite;
-}
-
-.balloon2 {
-    right: 10%;
-    top: 15%;
-    font-size: 3rem;
-    animation: float 5s ease-in-out infinite;
-    animation-delay: 1s;
 }
 
 .star1 {
@@ -126,18 +108,43 @@
     animation-delay: 0.5s;
 }
 
-.confetti1 {
-    right: 15%;
-    bottom: 30%;
-    font-size: 2rem;
-    animation: bounce 2s ease-in-out infinite;
+/* Heart balloon - positioned relative to girl in background */
+.heartBalloon {
+    position: absolute;
+    /* Position near top-left where girl is in the image */
+    left: 12%;
+    top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: floatBalloon 4s ease-in-out infinite;
 }
 
-.heart1 {
-    left: 5%;
-    top: 50%;
-    font-size: 1.8rem;
-    animation: pulse 2s ease-in-out infinite;
+.heart {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+@media (min-width: 768px) {
+    .heartBalloon {
+        left: 18%;
+        top: 12%;
+    }
+
+    .heart {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .heartBalloon {
+        left: 22%;
+        top: 10%;
+    }
+
+    .heart {
+        font-size: 3.5rem;
+    }
 }
 
 /* Content */
@@ -169,28 +176,6 @@
     color: rgba(255, 255, 255, 0.95);
     margin-bottom: var(--space-8);
     font-weight: 500;
-}
-
-.cta {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-4) var(--space-8);
-    font-family: var(--font-primary);
-    font-size: var(--text-lg);
-    font-weight: 700;
-    color: var(--color-cta-text);
-    background: linear-gradient(135deg, var(--color-cta-gradient-start), var(--color-cta-gradient-end));
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-radius: var(--radius-full);
-    text-decoration: none;
-    box-shadow: 0 6px 25px var(--color-cta-shadow);
-    transition: all var(--transition-base);
-}
-
-.cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 35px var(--color-cta-shadow-hover);
 }
 
 /* Bottom wave transition */
@@ -258,6 +243,15 @@
 
     50% {
         transform: translateY(-15px);
+    }
+}
+
+@keyframes floatBalloon {
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(2deg);
     }
 }
 

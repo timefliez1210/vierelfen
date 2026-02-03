@@ -18,10 +18,10 @@
     --color-honey: #FFD93D;
     --color-mint: #A8E6CF;
 
-    /* Purple Accent */
-    --color-purple: #5E53A9;
-    --color-purple-light: #8078C4;
-    --color-purple-dark: #4A4287;
+    /* Mint Accent */
+    --color-purple: #69867C;
+    --color-purple-light: #8A9F94;
+    --color-purple-dark: #526960;
 
     /* Neutrals */
     --color-cream: #FAF0E6;
@@ -33,12 +33,12 @@
     --color-border: #E0E0E0;
     --color-border-light: #eeeeee;
 
-    /* CTA Button Colors */
-    --color-cta-text: #5D4037;
-    --color-cta-gradient-start: #FFD93D;
-    --color-cta-gradient-end: #FFB347;
-    --color-cta-shadow: rgba(255, 179, 71, 0.4);
-    --color-cta-shadow-hover: rgba(255, 179, 71, 0.5);
+    /* CTA Button Colors - Mint Green */
+    --color-cta-text: #FFFFFF;
+    --color-cta-gradient-start: #8A9F94;
+    --color-cta-gradient-end: #69867C;
+    --color-cta-shadow: rgba(105, 134, 124, 0.35);
+    --color-cta-shadow-hover: rgba(105, 134, 124, 0.5);
 
     /* Overlay Colors */
     --color-overlay: rgba(61, 61, 61, 0.4);

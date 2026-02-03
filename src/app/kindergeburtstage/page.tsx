@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import Hero from '@/components/Hero';
+import Button from '@/components/Button';
 import styles from './page.module.css';
 import { PRICING } from '@/constants';
 
@@ -70,9 +70,9 @@ export default function Kindergeburtstage() {
                                 </ul>
                             </div>
 
-                            <Link href="/kontakt" className={styles.ctaButton}>
+                            <Button href="/kontakt">
                                 Jetzt anfragen
-                            </Link>
+                            </Button>
                         </div>
 
                         {/* Ich will spielen */}
@@ -102,9 +102,9 @@ export default function Kindergeburtstage() {
                                 </div>
                             </div>
 
-                            <Link href="/kontakt" className={styles.ctaButton}>
+                            <Button href="/kontakt">
                                 Jetzt anfragen
-                            </Link>
+                            </Button>
                         </div>
 
                         {/* Extras */}
@@ -154,9 +154,9 @@ export default function Kindergeburtstage() {
                 <div className={styles.container}>
                     <h2>Habt ihr noch Fragen?</h2>
                     <p>Wir beraten euch gerne und finden das passende Angebot für euch.</p>
-                    <Link href="/kontakt" className={styles.ctaButtonLarge}>
+                    <Button href="/kontakt" size="large">
                         Kontakt aufnehmen
-                    </Link>
+                    </Button>
                 </div>
             </section>
         </div>

@@ -1,6 +1,6 @@
 import Hero from '@/components/Hero';
-import Link from 'next/link';
 import Image from 'next/image';
+import Button from '@/components/Button';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -90,9 +90,9 @@ export default function Home() {
                 <li>🎨 Aktivitäten und Spiele für Kinder</li>
                 <li>⭐ Zusätzliche Optionen für individuelle Feiern</li>
               </ul>
-              <Link href="/kontakt" className={styles.cta}>
+              <Button href="/kontakt">
                 Jetzt anfragen
-              </Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -147,9 +147,9 @@ export default function Home() {
         <div className={styles.container}>
           <h2>Bereit für die perfekte Kinderparty?</h2>
           <p>Kontaktiert uns noch heute und lasst uns gemeinsam eine unvergessliche Feier planen!</p>
-          <Link href="/kontakt" className={styles.ctaLarge}>
-            Jetzt Termin anfragen 🎉
-          </Link>
+          <Button href="/kontakt" size="large">
+            Jetzt Termin anfragen
+          </Button>
         </div>
       </section>
     </>

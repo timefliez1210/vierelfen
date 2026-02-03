@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Button from './Button';
 import styles from './Hero.module.css';
 
 interface HeroProps {
@@ -51,12 +51,11 @@ export default function Hero({
                 {/* Floating decorations */}
                 {showCharacters && !isSubpage && (
                     <div className={styles.decorations}>
-                        <div className={`${styles.balloon} ${styles.balloon1}`}>🎈</div>
-                        <div className={`${styles.balloon} ${styles.balloon2}`}>🎈</div>
                         <div className={`${styles.star} ${styles.star1}`}>✨</div>
                         <div className={`${styles.star} ${styles.star2}`}>⭐</div>
-                        <div className={`${styles.confetti} ${styles.confetti1}`}>🎉</div>
-                        <div className={`${styles.heart} ${styles.heart1}`}>❤️</div>
+                        <div className={styles.heartBalloon}>
+                            <div className={styles.heart}>❤️</div>
+                        </div>
                     </div>
                 )}
             </div>
@@ -66,9 +65,9 @@ export default function Hero({
                 <h1 className={styles.title}>{title}</h1>
                 <p className={styles.subtitle}>{subtitle}</p>
                 {ctaText && (
-                    <Link href={ctaHref} className={styles.cta}>
+                    <Button href={ctaHref} size="large">
                         {ctaText}
-                    </Link>
+                    </Button>
                 )}
             </div>
 

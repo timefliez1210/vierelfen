@@ -1,0 +1,84 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    color: var(--color-cta-text);
+    background: linear-gradient(135deg, var(--color-cta-gradient-start), var(--color-cta-gradient-end));
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px var(--color-cta-shadow);
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.button::before {
+    content: '›';
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-white);
+    border-radius: 50%;
+    color: var(--color-cta-gradient-end);
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    transition: transform var(--transition-fast);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--color-cta-shadow-hover);
+}
+
+.button:hover::before {
+    transform: scale(1.05);
+}
+
+/* Default size */
+.default {
+    padding: var(--space-2) var(--space-6);
+    padding-left: 52px;
+    font-size: var(--text-base);
+    height: 44px;
+}
+
+.default::before {
+    width: 48px;
+    height: 48px;
+    left: -2px;
+    font-size: 1.5rem;
+}
+
+/* Large size */
+.large {
+    padding: var(--space-3) var(--space-8);
+    padding-left: 62px;
+    font-size: var(--text-lg);
+    height: 52px;
+}
+
+.large::before {
+    width: 57px;
+    height: 57px;
+    left: -3px;
+    font-size: 1.75rem;
+}
+
+/* Primary variant (default) */
+.primary {
+    background: linear-gradient(135deg, var(--color-cta-gradient-start), var(--color-cta-gradient-end));
+}
+
+/* Secondary variant */
+.secondary {
+    background: var(--color-purple);
+}
+
+.secondary:hover {
+    background: var(--color-purple-dark);
+}
+
+.secondary::before {
+    color: var(--color-purple);
+}
