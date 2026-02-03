@@ -8,262 +8,251 @@
     padding: 0 var(--container-padding);
 }
 
-/* Pricing Section */
-.pricing {
+/* Section Base */
+.section {
     padding: var(--space-16) 0;
-    text-align: center;
 }
 
-.pricing h2 {
-    margin-bottom: var(--space-8);
-}
-
-.priceCards {
+/* Pricing Grid */
+.pricingGrid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-6);
-    max-width: 700px;
-    margin: 0 auto;
 }
 
-@media (min-width: 640px) {
-    .priceCards {
+@media (min-width: 1024px) {
+    .pricingGrid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-.priceCard {
+.pricingCard {
     background: var(--color-white);
     border-radius: var(--radius-2xl);
     padding: var(--space-8);
     box-shadow: var(--shadow-card);
-    transition: transform var(--transition-base);
 }
 
-.priceCard:hover {
-    transform: translateY(-4px);
-}
-
-.priceCard.highlighted {
-    background: linear-gradient(135deg, var(--color-purple-light), var(--color-purple));
-    color: var(--color-white);
-}
-
-.priceLabel {
-    font-weight: 600;
-    margin-bottom: var(--space-3);
-    font-size: var(--text-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.priceAmount {
-    font-family: var(--font-display);
-    font-size: var(--text-4xl);
-    font-weight: 700;
-    margin-bottom: var(--space-2);
-}
-
-.priceDuration {
-    font-size: var(--text-sm);
-    opacity: 0.8;
-}
-
-/* Included Section */
-.included {
-    padding: var(--space-16) 0;
-    background: var(--color-white);
-}
-
-.includedHeader {
-    text-align: center;
-    margin-bottom: var(--space-8);
-}
-
-.includedHeader h2 {
-    margin-bottom: var(--space-3);
-}
-
-.includedHeader p {
-    color: var(--color-text-light);
-    font-size: var(--text-lg);
-}
-
-.includedImageWrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: var(--radius-2xl);
-    overflow: hidden;
-    box-shadow: var(--shadow-card);
-    margin-bottom: var(--space-10);
-}
-
-@media (min-width: 768px) {
-    .includedImageWrapper {
-        aspect-ratio: 21 / 9;
-    }
-}
-
-.includedGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
-}
-
-@media (min-width: 640px) {
-    .includedGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.extrasCard {
+    grid-column: 1 / -1;
 }
 
 @media (min-width: 1024px) {
-    .includedGrid {
+    .extrasCard {
+        grid-column: 1 / 2;
+    }
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.sectionIcon {
+    font-size: 2rem;
+}
+
+.sectionHeader h2 {
+    margin: 0;
+    font-size: var(--text-2xl);
+}
+
+.sectionIntro {
+    font-size: var(--text-base);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-6);
+    line-height: 1.7;
+}
+
+/* Package Info */
+.packageInfo {
+    margin-bottom: var(--space-6);
+}
+
+.packageInfo h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-1);
+}
+
+.packageDetails {
+    color: var(--color-text-light);
+    margin: 0;
+}
+
+/* Price Table */
+.priceTable {
+    background: var(--color-cream-light);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    margin-bottom: var(--space-6);
+}
+
+.priceRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4) var(--space-5);
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.priceRow:last-child {
+    border-bottom: none;
+}
+
+.priceRow.deposit {
+    background: var(--color-cream);
+}
+
+.price {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+/* Included Preview */
+.includedPreview {
+    background: var(--color-cream-light);
+    border-radius: var(--radius-xl);
+    padding: var(--space-4) var(--space-5);
+    margin-bottom: var(--space-6);
+}
+
+.includedPreview h4 {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-3);
+}
+
+.includedPreview ul {
+    margin: 0;
+    padding-left: var(--space-5);
+}
+
+.includedPreview li {
+    color: var(--color-text-light);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-2);
+    line-height: 1.5;
+}
+
+.includedPreview li:last-child {
+    margin-bottom: 0;
+}
+
+/* Addons Grid */
+.addonsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+}
+
+@media (min-width: 480px) {
+    .addonsGrid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-.includedItem {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--space-4);
-    padding: var(--space-5);
+.addonCard {
     background: var(--color-cream-light);
-    border-radius: var(--radius-xl);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    text-align: center;
 }
 
-.includedItem .icon {
-    font-size: 2rem;
-    flex-shrink: 0;
-}
-
-.includedItem h4 {
-    margin-bottom: var(--space-1);
+.addonCard h4 {
     font-size: var(--text-base);
+    margin-bottom: var(--space-2);
 }
 
-.includedItem p {
-    margin: 0;
+.addonPrice {
+    display: block;
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+.addonNote {
+    display: block;
     font-size: var(--text-sm);
     color: var(--color-text-light);
+    margin-top: var(--space-1);
 }
 
-/* Capacity Section */
-.capacity {
-    padding: var(--space-16) 0;
-    text-align: center;
+/* Info Section */
+.infoSection {
+    padding: var(--space-12) 0;
 }
 
-.capacity h2 {
-    margin-bottom: var(--space-8);
-}
-
-.capacityCard {
+.infoBox {
     background: var(--color-white);
-    border-radius: var(--radius-2xl);
-    padding: var(--space-8);
-    max-width: 500px;
-    margin: 0 auto;
-    box-shadow: var(--shadow-card);
-}
-
-.capacityMain {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: var(--space-6);
-    padding-bottom: var(--space-6);
-    border-bottom: 2px solid var(--color-cream);
-}
-
-.capacityNumber {
-    font-family: var(--font-display);
-    font-size: 4rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    line-height: 1;
-}
-
-.capacityLabel {
-    font-size: var(--text-lg);
-    color: var(--color-text-light);
-    margin-top: var(--space-2);
-}
-
-.capacityDetails {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-}
-
-.capacityItem {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-3);
-    font-size: var(--text-lg);
-}
-
-/* Booking Section */
-.booking {
-    padding: var(--space-16) 0;
-    background: var(--color-white);
-}
-
-.booking h2 {
-    text-align: center;
-    margin-bottom: var(--space-10);
-}
-
-.bookingGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-@media (min-width: 640px) {
-    .bookingGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.bookingItem {
-    padding: var(--space-5);
-    background: var(--color-cream-light);
     border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    border-left: 4px solid var(--color-purple);
+    max-width: 700px;
 }
 
-.bookingItem h4 {
-    color: var(--color-primary-dark);
-    margin-bottom: var(--space-2);
-    font-size: var(--text-base);
+.infoBox h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-3);
 }
 
-.bookingItem p {
-    margin: 0;
+.infoBox p {
     color: var(--color-text-light);
+    margin: 0 0 var(--space-3);
+    line-height: 1.7;
+}
+
+.infoBox p:last-child {
+    margin-bottom: 0;
+}
+
+.highlight {
+    color: var(--color-primary-dark) !important;
+    font-weight: 600;
 }
 
 /* CTA Section */
-.cta {
+.ctaSection {
     padding: var(--space-16) 0;
+    background: var(--color-white);
     text-align: center;
 }
 
-.cta h2 {
-    color: var(--color-primary-dark);
-    margin-bottom: var(--space-4);
+.ctaSection h2 {
+    margin-bottom: var(--space-3);
 }
 
-.cta p {
+.ctaSection p {
     color: var(--color-text-light);
     font-size: var(--text-lg);
     margin-bottom: var(--space-8);
 }
 
+/* CTA Buttons */
 .ctaButton {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-white);
+    background: var(--color-purple);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.ctaButton:hover {
+    background: var(--color-purple-dark);
+    transform: translateY(-2px);
+}
+
+.ctaButtonLarge {
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
@@ -279,7 +268,7 @@
     transition: all var(--transition-base);
 }
 
-.ctaButton:hover {
+.ctaButtonLarge:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px var(--color-cta-shadow-hover);
 }

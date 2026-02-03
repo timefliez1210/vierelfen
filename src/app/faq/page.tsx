@@ -20,8 +20,8 @@ export default function FAQ() {
                         <div className={styles.faqCard}>
                             <h2>Buchung & Zeiten</h2>
                             <ul className={styles.faqList}>
-                                <li><strong>Buchungsdauer:</strong> {PRICING.duration}</li>
-                                <li>Ihr könnt {PRICING.earlyArrival} früher zur Vorbereitung kommen</li>
+                                <li><strong>Buchungsdauer:</strong> {PRICING.party.duration}</li>
+                                <li>Ihr könnt {PRICING.party.earlyArrival} früher zur Vorbereitung kommen</li>
                                 <li>Beginn der Feier bestimmt ihr selbst – wir richten uns nach euch</li>
                                 <li><strong>Wichtig:</strong> Unser Laden ist bis {OPENING_HOURS.closingTime} geöffnet</li>
                                 <li><em>({OPENING_HOURS.note})</em></li>
@@ -33,12 +33,12 @@ export default function FAQ() {
                             <h2>Preise</h2>
                             <div className={styles.priceList}>
                                 <div className={styles.priceItem}>
-                                    <span className={styles.priceLabel}>{PRICING.weekday.label}</span>
-                                    <span className={styles.priceValue}>{PRICING.weekday.priceFormatted}</span>
+                                    <span className={styles.priceLabel}>{PRICING.party.weekday.label}</span>
+                                    <span className={styles.priceValue}>{PRICING.party.weekday.priceFormatted}</span>
                                 </div>
                                 <div className={styles.priceItem}>
-                                    <span className={styles.priceLabel}>{PRICING.weekend.label}</span>
-                                    <span className={styles.priceValue}>{PRICING.weekend.priceFormatted}</span>
+                                    <span className={styles.priceLabel}>{PRICING.party.weekend.label}</span>
+                                    <span className={styles.priceValue}>{PRICING.party.weekend.priceFormatted}</span>
                                 </div>
                             </div>
                         </div>

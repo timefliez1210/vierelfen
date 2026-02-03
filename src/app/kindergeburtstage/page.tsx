@@ -1,163 +1,162 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
+import Link from 'next/link';
 import Hero from '@/components/Hero';
 import styles from './page.module.css';
-import { PRICING, CAPACITY, OPENING_HOURS } from '@/constants';
+import { PRICING } from '@/constants';
 
 export const metadata: Metadata = {
-    title: 'Kindergeburtstage & Preise',
-    description: 'Kindergeburtstag feiern bei Vier Elfen Hildesheim. Preise, Pakete und alles was im Geburtstagspaket enthalten ist.',
+    title: 'Preise & Angebote',
+    description: 'Unsere Preise für Kindergeburtstage, Feiern und offenes Spielen bei Vier Elfen in Hildesheim.',
 };
 
 export default function Kindergeburtstage() {
     return (
         <div className={styles.page}>
             <Hero
-                title="Kindergeburtstage bei uns"
-                subtitle="Wir bieten liebevoll gestaltete Kindergeburtstagsfeiern mit verschiedenen Mottos an – ideal zum Spielen, Feiern und Wohlfühlen."
+                title="Unsere Preise"
+                subtitle="Ob große Feier oder spontaner Spielspaß – hier findet ihr das passende Angebot für euch."
                 backgroundImage="/images/showcase-party.jpg"
                 variant="subpage"
             />
 
-            {/* Pricing Section */}
-            <section className={styles.pricing}>
+            {/* Pricing Grid */}
+            <section className={styles.section}>
                 <div className={styles.container}>
-                    <h2>Preise</h2>
-                    <div className={styles.priceCards}>
-                        <div className={styles.priceCard}>
-                            <div className={styles.priceLabel}>{PRICING.weekday.label}</div>
-                            <div className={styles.priceAmount}>{PRICING.weekday.priceFormatted}</div>
-                            <div className={styles.priceDuration}>{PRICING.duration}</div>
+                    <div className={styles.pricingGrid}>
+                        {/* Ich will feiern */}
+                        <div className={styles.pricingCard}>
+                            <div className={styles.sectionHeader}>
+                                <span className={styles.sectionIcon}>🎂</span>
+                                <h2>Ich will feiern</h2>
+                            </div>
+                            <p className={styles.sectionIntro}>
+                                Ihr plant eine Party? Bei uns bekommt ihr alles aus einer Hand –
+                                von der Deko bis zum Programm.
+                            </p>
+
+                            <div className={styles.packageInfo}>
+                                <h3>Geschlossene Gesellschaft</h3>
+                                <p className={styles.packageDetails}>
+                                    Max. {PRICING.party.maxPersons} Personen · {PRICING.party.duration}
+                                </p>
+                            </div>
+
+                            <div className={styles.priceTable}>
+                                <div className={styles.priceRow}>
+                                    <span>{PRICING.party.weekday.label}</span>
+                                    <span className={styles.price}>{PRICING.party.weekday.priceFormatted}</span>
+                                </div>
+                                <div className={styles.priceRow}>
+                                    <span>{PRICING.party.weekend.label}</span>
+                                    <span className={styles.price}>{PRICING.party.weekend.priceFormatted}</span>
+                                </div>
+                                <div className={styles.priceRow}>
+                                    <span>{PRICING.party.extraTime.label}</span>
+                                    <span className={styles.price}>{PRICING.party.extraTime.priceFormatted}</span>
+                                </div>
+                                <div className={`${styles.priceRow} ${styles.deposit}`}>
+                                    <span>Anzahlung*</span>
+                                    <span className={styles.price}>{PRICING.party.deposit.amountFormatted}</span>
+                                </div>
+                            </div>
+
+                            <div className={styles.includedPreview}>
+                                <h4>Das ist alles dabei:</h4>
+                                <ul>
+                                    <li>Exklusive Nutzung von Sitz- und Spielbereich, Küche & WC</li>
+                                    <li>Motto eurer Wahl mit passender Deko</li>
+                                    <li>Liebevoll eingedeckter Tisch</li>
+                                    <li>Getränke und Knabbereien für die Kinder</li>
+                                </ul>
+                            </div>
+
+                            <Link href="/kontakt" className={styles.ctaButton}>
+                                Jetzt anfragen
+                            </Link>
                         </div>
-                        <div className={`${styles.priceCard} ${styles.highlighted}`}>
-                            <div className={styles.priceLabel}>{PRICING.weekend.label}</div>
-                            <div className={styles.priceAmount}>{PRICING.weekend.priceFormatted}</div>
-                            <div className={styles.priceDuration}>{PRICING.duration}</div>
+
+                        {/* Ich will spielen */}
+                        <div className={styles.pricingCard}>
+                            <div className={styles.sectionHeader}>
+                                <span className={styles.sectionIcon}>🧩</span>
+                                <h2>Ich will spielen</h2>
+                            </div>
+                            <p className={styles.sectionIntro}>
+                                Manchmal braucht es keinen besonderen Anlass. Kommt einfach vorbei
+                                und lasst eure Kinder in unserem Spielbereich toben.
+                            </p>
+
+                            <div className={styles.packageInfo}>
+                                <h3>Offenes Spielen</h3>
+                                <p className={styles.packageDetails}>Spielzeit: {PRICING.openPlay.duration}</p>
+                            </div>
+
+                            <div className={styles.priceTable}>
+                                <div className={styles.priceRow}>
+                                    <span>{PRICING.openPlay.children.label}</span>
+                                    <span className={styles.price}>{PRICING.openPlay.children.priceFormatted}</span>
+                                </div>
+                                <div className={styles.priceRow}>
+                                    <span>{PRICING.openPlay.adults.label}</span>
+                                    <span className={styles.price}>{PRICING.openPlay.adults.priceFormatted}</span>
+                                </div>
+                            </div>
+
+                            <Link href="/kontakt" className={styles.ctaButton}>
+                                Jetzt anfragen
+                            </Link>
+                        </div>
+
+                        {/* Extras */}
+                        <div className={`${styles.pricingCard} ${styles.extrasCard}`}>
+                            <div className={styles.sectionHeader}>
+                                <span className={styles.sectionIcon}>✨</span>
+                                <h2>Extras für eure Feier</h2>
+                            </div>
+                            <p className={styles.sectionIntro}>
+                                Ihr möchtet eure Party noch besonderer machen? Diese Extras könnt
+                                ihr ganz einfach dazubuchen.
+                            </p>
+
+                            <div className={styles.addonsGrid}>
+                                {PRICING.addons.map((addon) => (
+                                    <div key={addon.name} className={styles.addonCard}>
+                                        <h4>{addon.name}</h4>
+                                        <span className={styles.addonPrice}>{addon.price}</span>
+                                        {addon.note && <span className={styles.addonNote}>{addon.note}</span>}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* What's Included Section */}
-            <section className={styles.included}>
+            {/* Wichtige Hinweise */}
+            <section className={`${styles.section} ${styles.infoSection}`}>
                 <div className={styles.container}>
-                    <div className={styles.includedHeader}>
-                        <h2>Im Geburtstagspaket enthalten</h2>
-                        <p>Alles was ihr für eine unvergessliche Feier braucht</p>
-                    </div>
-                    <div className={styles.includedImageWrapper}>
-                        <Image
-                            src="/images/playroom-shop.jpg"
-                            alt="Spielbereich mit Kaufladen"
-                            fill
-                            quality={70}
-                            sizes="100vw"
-                            style={{ objectFit: 'cover' }}
-                        />
-                    </div>
-                    <div className={styles.includedGrid}>
-                        <div className={styles.includedItem}>
-                            <span className={styles.icon}>🏠</span>
-                            <div>
-                                <h4>Exklusive Raumnutzung</h4>
-                                <p>Sitzbereich, Spielbereich, Küche & WC – alles nur für euch</p>
-                            </div>
-                        </div>
-                        <div className={styles.includedItem}>
-                            <span className={styles.icon}>🎨</span>
-                            <div>
-                                <h4>Motto eurer Wahl</h4>
-                                <p>Das gewählte Kindergeburtstags-Motto</p>
-                            </div>
-                        </div>
-                        <div className={styles.includedItem}>
-                            <span className={styles.icon}>🎈</span>
-                            <div>
-                                <h4>Dekoration</h4>
-                                <p>Dekoration mit Ballons</p>
-                            </div>
-                        </div>
-                        <div className={styles.includedItem}>
-                            <span className={styles.icon}>🍽️</span>
-                            <div>
-                                <h4>Eingedeckter Tisch</h4>
-                                <p>Liebevoll gedeckter Tisch für die Kinder</p>
-                            </div>
-                        </div>
-                        <div className={styles.includedItem}>
-                            <span className={styles.icon}>🥤</span>
-                            <div>
-                                <h4>Getränke</h4>
-                                <p>3 Liter Getränke (Tafelwasser & Apfelschorle)</p>
-                            </div>
-                        </div>
-                        <div className={styles.includedItem}>
-                            <span className={styles.icon}>🍿</span>
-                            <div>
-                                <h4>Knabbereien</h4>
-                                <p>Knabbereien-Teller für die Kinder</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Capacity Section */}
-            <section className={styles.capacity}>
-                <div className={styles.container}>
-                    <h2>👨‍👩‍👧‍👦 Kapazität</h2>
-                    <div className={styles.capacityCard}>
-                        <div className={styles.capacityMain}>
-                            <span className={styles.capacityNumber}>{CAPACITY.total}</span>
-                            <span className={styles.capacityLabel}>Personen maximal</span>
-                        </div>
-                        <div className={styles.capacityDetails}>
-                            <div className={styles.capacityItem}>
-                                <span>👶</span>
-                                <span>Höchstens {CAPACITY.maxChildren} Kinder</span>
-                            </div>
-                            <div className={styles.capacityItem}>
-                                <span>👨‍👩‍👧</span>
-                                <span>Höchstens {CAPACITY.maxAdults} Erwachsene</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Booking Info */}
-            <section className={styles.booking}>
-                <div className={styles.container}>
-                    <h2>🕒 Buchung & Zeiten</h2>
-                    <div className={styles.bookingGrid}>
-                        <div className={styles.bookingItem}>
-                            <h4>Buchungsdauer</h4>
-                            <p>{PRICING.duration}</p>
-                        </div>
-                        <div className={styles.bookingItem}>
-                            <h4>Früher kommen</h4>
-                            <p>{PRICING.earlyArrival} vor der Feier zur Vorbereitung</p>
-                        </div>
-                        <div className={styles.bookingItem}>
-                            <h4>Beginn</h4>
-                            <p>Ihr bestimmt selbst – wir richten uns nach euch</p>
-                        </div>
-                        <div className={styles.bookingItem}>
-                            <h4>Öffnungszeiten</h4>
-                            <p>Bis {OPENING_HOURS.closingTime} ({OPENING_HOURS.note})</p>
-                        </div>
+                    <div className={styles.infoBox}>
+                        <h3>Gut zu wissen</h3>
+                        <p>
+                            Für Buchungen bitten wir um eine Anzahlung von {PRICING.party.deposit.amountFormatted}.
+                            Falls ihr absagen müsst, wird dieser Betrag nicht zurückerstattet – aber
+                            keine Sorge, wir verrechnen ihn gerne mit eurer nächsten Buchung.
+                        </p>
+                        <p className={styles.highlight}>
+                            Ohne Anzahlung ist die Reservierung nicht fest.
+                        </p>
                     </div>
                 </div>
             </section>
 
             {/* CTA */}
-            <section className={styles.cta}>
+            <section className={styles.ctaSection}>
                 <div className={styles.container}>
-                    <h2>Bereit zum Feiern?</h2>
-                    <p>Kontaktiert uns für eine unverbindliche Anfrage!</p>
-                    <a href="/kontakt" className={styles.ctaButton}>
-                        Jetzt anfragen 🎉
-                    </a>
+                    <h2>Habt ihr noch Fragen?</h2>
+                    <p>Wir beraten euch gerne und finden das passende Angebot für euch.</p>
+                    <Link href="/kontakt" className={styles.ctaButtonLarge}>
+                        Kontakt aufnehmen
+                    </Link>
                 </div>
             </section>
         </div>

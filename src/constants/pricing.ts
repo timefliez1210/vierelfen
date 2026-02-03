@@ -1,16 +1,58 @@
 export const PRICING = {
-    weekday: {
-        label: 'Montag – Donnerstag',
-        price: 330,
-        priceFormatted: '330 €',
+    party: {
+        weekday: {
+            label: 'Mo – Do',
+            price: 330,
+            priceFormatted: '330 €',
+        },
+        weekend: {
+            label: 'Fr – So & Feiertage',
+            price: 390,
+            priceFormatted: '390 €',
+        },
+        duration: '4 Stunden',
+        maxPersons: 30,
+        extraTime: {
+            label: 'Jede zusätzliche Viertelstunde',
+            price: 30,
+            priceFormatted: '30 €',
+        },
+        deposit: {
+            amount: 150,
+            amountFormatted: '150 €',
+        },
+        earlyArrival: '30 Minuten',
     },
-    weekend: {
-        label: 'Freitag – Sonntag & Feiertage',
-        price: 390,
-        priceFormatted: '390 €',
+    openPlay: {
+        duration: '2 Stunden',
+        adults: {
+            label: 'Erwachsene',
+            price: 5,
+            priceFormatted: '5 €',
+        },
+        children: {
+            label: 'Kinder',
+            price: 10,
+            priceFormatted: '10 €',
+        },
     },
-    duration: '4 Stunden',
-    earlyArrival: '30 Minuten',
+    addons: [
+        {
+            name: 'Kaffeemaschine',
+            price: '30 €',
+            note: 'All you can drink',
+        },
+        {
+            name: 'Popcornmaschine',
+            price: '25 €',
+            note: null,
+        },
+        {
+            name: 'Bunte Tüten',
+            price: 'nach Absprache',
+            note: null,
+        },
+    ],
 } as const;
 
 export const CAPACITY = {
