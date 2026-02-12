@@ -452,9 +452,4 @@
     fill: var(--color-purple);
 }
 
-/* Hide floating buttons on desktop */
-@media (min-width: 768px) {
-    .floatingButtons {
-        display: none;
-    }
-}
+/* Floating buttons visible on all screen sizes */
