@@ -167,7 +167,7 @@ export default function Kontakt() {
                                 </div>
 
                                 <button type="submit" className={styles.submitButton}>
-                                    Anfrage senden 🎉
+                                    Anfrage senden
                                 </button>
                             </form>
                         </div>
