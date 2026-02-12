@@ -36,6 +36,8 @@ export const metadata: Metadata = {
     'Kinderparty',
   ],
   authors: [{ name: 'Vier Elfen Kinderlounge' }],
+  manifest: '/manifest.json',
+  themeColor: '#69867C',
   openGraph: {
     title: 'Vier Elfen Kinderlounge Hildesheim',
     description: 'Unvergessliche Kindergeburtstage und private Feiern in Hildesheim',
