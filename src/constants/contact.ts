@@ -1,6 +1,6 @@
 export const CONTACT = {
-    phone: '0176 59960500',
-    phoneLink: '+4917659960500',
+    phone: '0174 4014141',
+    phoneLink: '+491744014141',
     email: 'hallo@vierelfen.com',
     address: {
         street: 'Junkersstraße 11A',
