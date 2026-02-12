@@ -77,7 +77,7 @@ export default function Header() {
             <div className={styles.floatingButtons}>
                 {/* Instagram Button */}
                 <a
-                    href="https://instagram.com/vierelfen"
+                    href="https://www.instagram.com/vier_elfen"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.socialButton}
