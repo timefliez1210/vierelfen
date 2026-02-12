@@ -242,12 +242,71 @@
     }
 }
 
-/* Floating Help Button (Mobile only) */
-.helpButtonWrapper {
+/* Floating Buttons Container */
+.floatingButtons {
     position: fixed;
     bottom: var(--space-6);
     right: var(--space-6);
     z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    align-items: flex-end;
+}
+
+/* Social Buttons (Instagram & WhatsApp) */
+.socialButton {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.2),
+        0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.socialButton svg {
+    width: 28px;
+    height: 28px;
+    color: white;
+}
+
+/* Instagram Button - Gradient */
+.socialButton:nth-child(1) {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.socialButton:nth-child(1):hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+        0 8px 30px rgba(214, 36, 159, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* WhatsApp Button - Green */
+.socialButton:nth-child(2) {
+    background: #25D366;
+}
+
+.socialButton:nth-child(2):hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+        0 8px 30px rgba(37, 211, 102, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.socialButton:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Help Button Wrapper */
+.helpButtonWrapper {
+    position: relative;
 }
 
 .helpButton {
@@ -393,9 +452,9 @@
     fill: var(--color-purple);
 }
 
-/* Hide help button on desktop */
+/* Hide floating buttons on desktop */
 @media (min-width: 768px) {
-    .helpButtonWrapper {
+    .floatingButtons {
         display: none;
     }
 }
