@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import styles from './page.module.css';
+import { CONTACT } from '@/constants';
 
 export const metadata: Metadata = {
     title: 'Datenschutzerklärung',
@@ -70,11 +71,12 @@ export default function Datenschutz() {
                             Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
                         </p>
                         <p>
-                            Inh. G. Meinzer<br />
-                            Junkersstraße 11a<br />
-                            31137 Hildesheim<br />
-                            Telefon: +49 176 59960500<br />
-                            E-Mail: hallo@vierelfen.com
+                            {CONTACT.businessName}<br />
+                            Inhaberin: Gabija Meinzer<br />
+                            {CONTACT.address.street}<br />
+                            {CONTACT.address.zip} {CONTACT.address.city}<br />
+                            Telefon: {CONTACT.phoneLink}<br />
+                            E-Mail: {CONTACT.email}
                         </p>
 
                         <h2>4. Datenerfassung auf dieser Website</h2>

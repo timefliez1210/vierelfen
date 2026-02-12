@@ -43,6 +43,16 @@ export default function FAQ() {
                             </div>
                         </div>
 
+                        {/* Anzahlung / Reservierung */}
+                        <div className={styles.faqCard}>
+                            <h2>Anzahlung / Reservierung</h2>
+                            <ul className={styles.faqList}>
+                                <li><strong>Anzahlung:</strong> {PRICING.party.deposit.amountFormatted}</li>
+                                <li>Eine Anzahlung dient als verbindliche Reservierung</li>
+                                <li>Die Anzahlung kann vor Ort in bar oder vorab per Überweisung getätigt werden</li>
+                            </ul>
+                        </div>
+
                         {/* Kapazität */}
                         <div className={styles.faqCard}>
                             <h2>Kapazität</h2>
@@ -75,15 +85,6 @@ export default function FAQ() {
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-
-                        {/* Anzahlung / Reservierung */}
-                        <div className={styles.faqCard}>
-                            <h2>Anzahlung / Reservierung</h2>
-                            <ul className={styles.faqList}>
-                                <li>Eine Anzahlung dient als verbindliche Reservierung</li>
-                                <li>Die Anzahlung kann vor Ort in bar oder vorab per Überweisung getätigt werden</li>
-                            </ul>
                         </div>
 
                         {/* Vertrag & Regeln */}

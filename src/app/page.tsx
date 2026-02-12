@@ -67,6 +67,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Additional Services - 3 Cards */}
+      {/* TODO: Review this section - base is correct but needs design refinement */}
+      {/* Consider: spacing, card styling, section title, icon choices, or card order */}
+      <section className={styles.additionalServices}>
+        <div className={styles.container}>
+          <div className={styles.features}>
+            <div className={styles.feature}>
+              <span className={styles.featureIcon}>🎨</span>
+              <h3>Dekoration auswärts</h3>
+              <p>Wir dekorieren auch bei euch zu Hause oder an eurem Wunschort</p>
+            </div>
+            <div className={styles.feature}>
+              <span className={styles.featureIcon}>🎭</span>
+              <h3>Animateure</h3>
+              <p>Professionelle Animateure können nach Absprache gebucht werden</p>
+            </div>
+            <div className={styles.feature}>
+              <span className={styles.featureIcon}>🚗</span>
+              <h3>Kostenlose Parkplätze</h3>
+              <p>Ausreichend Parkmöglichkeiten direkt vor der Haustür auf öffentlicher Straße</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section - Service with Image (reversed) */}
       <section className={styles.serviceBlock}>
         <div className={styles.container}>
@@ -86,9 +111,8 @@ export default function Home() {
               <ul>
                 <li>📝 Einfache Anfrage</li>
                 <li>🎈 Dekoration mit max. 100 Ballons inklusive</li>
-                <li>🥤 Essen und Trinken</li>
                 <li>🎨 Aktivitäten und Spiele für Kinder</li>
-                <li>⭐ Zusätzliche Optionen für individuelle Feiern</li>
+                <li>Zusätzliche Optionen für individuelle Feiern</li>
               </ul>
               <Button href="/kontakt">
                 Jetzt anfragen

@@ -47,17 +47,6 @@ export default function Hero({
                         <div className={styles.waveBottom}></div>
                     </>
                 )}
-
-                {/* Floating decorations */}
-                {showCharacters && !isSubpage && (
-                    <div className={styles.decorations}>
-                        <div className={`${styles.star} ${styles.star1}`}>✨</div>
-                        <div className={`${styles.star} ${styles.star2}`}>⭐</div>
-                        <div className={styles.heartBalloon}>
-                            <div className={styles.heart}>❤️</div>
-                        </div>
-                    </div>
-                )}
             </div>
 
             {/* Content */}

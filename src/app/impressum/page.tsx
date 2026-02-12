@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import styles from './page.module.css';
+import { CONTACT } from '@/constants';
 
 export const metadata: Metadata = {
     title: 'Impressum',
@@ -22,24 +23,23 @@ export default function Impressum() {
 
                         <h3>Betreiber</h3>
                         <p>
-                            Inh. G. Meinzer<br />
-                            Junkersstraße 11a<br />
-                            31137 Hildesheim
+                            {CONTACT.businessName}<br />
+                            Inhaberin: Gabija Meinzer<br />
+                            {CONTACT.address.street}<br />
+                            {CONTACT.address.zip} {CONTACT.address.city}
                         </p>
-
-                        <h3>Vertreten durch</h3>
-                        <p>Gabija Meinzer</p>
 
                         <h3>Kontakt</h3>
                         <p>
-                            Telefon: +49 176 59960500<br />
-                            E-Mail: hallo@vierelfen.com
+                            Telefon: {CONTACT.phoneLink}<br />
+                            E-Mail: {CONTACT.email}
                         </p>
 
-                        <h3>Umsatzsteuer-ID</h3>
+                        <h3>Kleinunternehmerregelung</h3>
                         <p>
-                            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                            DE323209105
+                            Die {CONTACT.businessName} ist als Einzelunternehmen tätig und wendet die
+                            Kleinunternehmerregelung gemäß § 19 UStG an. Es wird keine Umsatzsteuer
+                            ausgewiesen.
                         </p>
 
                         <h3>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h3>

@@ -89,16 +89,12 @@ export default function Ablauf() {
                             <p>Bitte Hausschuhe oder Socken mitbringen</p>
                         </div>
                         <div className={styles.ruleItem}>
-                            <span className={styles.ruleIcon}>🧹</span>
-                            <p>Bitte verlasst die Räumlichkeiten so, wie ihr sie vorgefunden habt</p>
-                        </div>
-                        <div className={styles.ruleItem}>
                             <span className={styles.ruleIcon}>👀</span>
                             <p>Die Aufsichtspflicht liegt bei den begleitenden Erwachsenen</p>
                         </div>
                         <div className={styles.ruleItem}>
                             <span className={styles.ruleIcon}>🚫</span>
-                            <p>Rauchen ist auf dem gesamten Gelände nicht gestattet</p>
+                            <p>Rauchen ist draußen erlaubt, jedoch nicht im Beisein bzw. Sichtfeld der Kinder</p>
                         </div>
                         <div className={styles.ruleItem}>
                             <span className={styles.ruleIcon}>🎉</span>

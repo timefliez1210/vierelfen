@@ -44,13 +44,13 @@ export const PRICING = {
         },
         {
             name: 'Popcornmaschine',
-            price: '25 €',
+            price: '20 €',
             note: null,
         },
         {
-            name: 'Bunte Tüten',
-            price: 'nach Absprache',
-            note: null,
+            name: 'Service vor Ort',
+            price: '80 €',
+            note: 'Unterstützung während des gebuchten Kindergeburtstags',
         },
     ],
 } as const;

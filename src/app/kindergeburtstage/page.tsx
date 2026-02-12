@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import Button from '@/components/Button';
 import styles from './page.module.css';
 import { PRICING } from '@/constants';
+import { Cake, Puzzle, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Preise & Angebote',
@@ -26,7 +27,9 @@ export default function Kindergeburtstage() {
                         {/* Ich will feiern */}
                         <div className={styles.pricingCard}>
                             <div className={styles.sectionHeader}>
-                                <span className={styles.sectionIcon}>🎂</span>
+                                <span className={styles.sectionIcon}>
+                                    <Cake size={32} strokeWidth={1.5} color="var(--color-primary)" />
+                                </span>
                                 <h2>Ich will feiern</h2>
                             </div>
                             <p className={styles.sectionIntro}>
@@ -49,10 +52,6 @@ export default function Kindergeburtstage() {
                                 <div className={styles.priceRow}>
                                     <span>{PRICING.party.weekend.label}</span>
                                     <span className={styles.price}>{PRICING.party.weekend.priceFormatted}</span>
-                                </div>
-                                <div className={styles.priceRow}>
-                                    <span>{PRICING.party.extraTime.label}</span>
-                                    <span className={styles.price}>{PRICING.party.extraTime.priceFormatted}</span>
                                 </div>
                                 <div className={`${styles.priceRow} ${styles.deposit}`}>
                                     <span>Anzahlung*</span>
@@ -78,7 +77,9 @@ export default function Kindergeburtstage() {
                         {/* Ich will spielen */}
                         <div className={styles.pricingCard}>
                             <div className={styles.sectionHeader}>
-                                <span className={styles.sectionIcon}>🧩</span>
+                                <span className={styles.sectionIcon}>
+                                    <Puzzle size={32} strokeWidth={1.5} color="var(--color-primary)" />
+                                </span>
                                 <h2>Ich will spielen</h2>
                             </div>
                             <p className={styles.sectionIntro}>
@@ -110,7 +111,9 @@ export default function Kindergeburtstage() {
                         {/* Extras */}
                         <div className={`${styles.pricingCard} ${styles.extrasCard}`}>
                             <div className={styles.sectionHeader}>
-                                <span className={styles.sectionIcon}>✨</span>
+                                <span className={styles.sectionIcon}>
+                                    <Sparkles size={32} strokeWidth={1.5} color="var(--color-primary)" />
+                                </span>
                                 <h2>Extras für eure Feier</h2>
                             </div>
                             <p className={styles.sectionIntro}>
@@ -144,6 +147,9 @@ export default function Kindergeburtstage() {
                         </p>
                         <p className={styles.highlight}>
                             Ohne Anzahlung ist die Reservierung nicht fest.
+                        </p>
+                        <p>
+                            Eine Verlängerung über 4 Stunden hinaus ist nach Absprache jederzeit möglich.
                         </p>
                     </div>
                 </div>
