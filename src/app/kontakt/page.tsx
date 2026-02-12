@@ -26,12 +26,18 @@ export default function Kontakt() {
         }
 
         try {
-            await fetch('/', {
+            const response = await fetch('/__forms.html', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams(formData as any).toString(),
             });
-            setFormSubmitted(true);
+
+            if (response.ok) {
+                setFormSubmitted(true);
+            } else {
+                console.error('Form submission failed:', response.status);
+                alert('Es gab ein Problem beim Senden der Anfrage. Bitte versuchen Sie es erneut.');
+            }
         } catch (error) {
             console.error('Form submission error:', error);
             alert('Es gab ein Problem beim Senden der Anfrage. Bitte versuchen Sie es erneut.');
