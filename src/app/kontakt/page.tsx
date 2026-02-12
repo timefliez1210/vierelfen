@@ -17,36 +17,21 @@ export default function Kontakt() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const form = e.currentTarget;
-        const formData = new FormData(form);
+        const myForm = e.currentTarget;
+        const formData = new FormData(myForm);
 
         // Add the date from DatePicker if selected
         if (selectedDate) {
             formData.set('date', selectedDate.toLocaleDateString('de-DE'));
         }
 
-        // Ensure form-name is included
-        formData.set('form-name', 'kontakt');
-
-        // Convert FormData to URLSearchParams properly
-        const params = new URLSearchParams();
-        formData.forEach((value, key) => {
-            params.append(key, value.toString());
-        });
-
         try {
-            const response = await fetch('/', {
+            await fetch('/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: params.toString(),
+                body: new URLSearchParams(formData as any).toString(),
             });
-
-            if (response.ok) {
-                setFormSubmitted(true);
-            } else {
-                console.error('Form submission failed:', response.status);
-                alert('Es gab ein Problem beim Senden der Anfrage. Bitte versuchen Sie es erneut.');
-            }
+            setFormSubmitted(true);
         } catch (error) {
             console.error('Form submission error:', error);
             alert('Es gab ein Problem beim Senden der Anfrage. Bitte versuchen Sie es erneut.');
