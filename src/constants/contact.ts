@@ -18,4 +18,4 @@ export const OPENING_HOURS = {
     note: 'andere Zeiten nach Absprache möglich',
 } as const;
 
-export const MAP_EMBED_URL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2442.8!2d9.95!3d52.17!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDEwJzEyLjAiTiA5wrA1NycwMC4wIkU!5e0!3m2!1sde!2sde!4v1234567890';
+export const MAP_EMBED_URL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.5!2d9.9455042!3d52.1760507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47baafed63fa228f%3A0x307db5e6c7ed9b74!2sVier%20Elfen!5e0!3m2!1sde!2sde!4v1707744014141';
