@@ -90,7 +90,7 @@ export default function Header() {
 
                 {/* WhatsApp Button */}
                 <a
-                    href={`https://wa.me/${CONTACT.phoneLink.replace('+', '')}`}
+                    href={`https://api.whatsapp.com/send?phone=${CONTACT.phoneLink.replace('+', '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.socialButton}
