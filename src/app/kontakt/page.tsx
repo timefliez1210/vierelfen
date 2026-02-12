@@ -20,15 +20,30 @@ export default function Kontakt() {
         const form = e.currentTarget;
         const formData = new FormData(form);
 
+        // Add the date from DatePicker if selected
+        if (selectedDate) {
+            formData.set('date', selectedDate.toLocaleDateString('de-DE'));
+        }
+
+        // Ensure form-name is included
+        formData.set('form-name', 'kontakt');
+
         try {
-            await fetch('/', {
+            const response = await fetch('/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
             });
-            setFormSubmitted(true);
+
+            if (response.ok) {
+                setFormSubmitted(true);
+            } else {
+                console.error('Form submission failed:', response.status);
+                alert('Es gab ein Problem beim Senden der Anfrage. Bitte versuchen Sie es erneut.');
+            }
         } catch (error) {
             console.error('Form submission error:', error);
+            alert('Es gab ein Problem beim Senden der Anfrage. Bitte versuchen Sie es erneut.');
         }
     };
 
@@ -120,7 +135,6 @@ export default function Kontakt() {
                                     <label htmlFor="date" className={styles.label}>Gewünschtes Datum 📅</label>
                                     <DatePicker
                                         id="date"
-                                        name="date"
                                         selected={selectedDate}
                                         onChange={(date: Date | null) => setSelectedDate(date)}
                                         dateFormat="dd.MM.yyyy"
@@ -129,6 +143,11 @@ export default function Kontakt() {
                                         minDate={new Date()}
                                         className={styles.input}
                                         autoComplete="off"
+                                    />
+                                    <input
+                                        type="hidden"
+                                        name="date"
+                                        value={selectedDate ? selectedDate.toLocaleDateString('de-DE') : ''}
                                     />
                                 </div>
 
