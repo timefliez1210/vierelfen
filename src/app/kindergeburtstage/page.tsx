@@ -3,7 +3,7 @@ import Hero from '@/components/Hero';
 import Button from '@/components/Button';
 import styles from './page.module.css';
 import { PRICING } from '@/constants';
-import { Cake, Puzzle, Sparkles } from 'lucide-react';
+import { Cake, Puzzle, Sparkles, Tag } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Preise & Angebote',
@@ -100,6 +100,49 @@ export default function Kindergeburtstage() {
                                 <div className={styles.priceRow}>
                                     <span>{PRICING.openPlay.adults.label}</span>
                                     <span className={styles.price}>{PRICING.openPlay.adults.priceFormatted}</span>
+                                </div>
+                            </div>
+
+                            <Button href="/kontakt">
+                                Jetzt anfragen
+                            </Button>
+                        </div>
+
+                        {/* Bonuskarte */}
+                        <div className={`${styles.pricingCard} ${styles.bonusCard}`}>
+                            <div className={styles.sectionHeader}>
+                                <span className={styles.sectionIcon}>
+                                    <Tag size={32} strokeWidth={1.5} color="var(--color-primary)" />
+                                </span>
+                                <h2>Bonuskarte</h2>
+                            </div>
+                            <p className={styles.sectionIntro}>
+                                Für alle, die regelmäßig zum offenen Spielen kommen:
+                                {PRICING.bonusCard.entriesPaid} Eintritte kaufen
+                                und {PRICING.bonusCard.entriesReceived} erhalten – zwei gratis!
+                            </p>
+
+                            <div className={styles.packageInfo}>
+                                <h3>Offenes Spielen</h3>
+                                <p className={styles.packageDetails}>
+                                    {PRICING.bonusCard.entriesPaid}x kaufen · {PRICING.bonusCard.entriesReceived}x spielen
+                                </p>
+                            </div>
+
+                            <div className={styles.priceTable}>
+                                <div className={styles.priceRow}>
+                                    <span>{PRICING.bonusCard.children.label}</span>
+                                    <span className={styles.bonusPriceGroup}>
+                                        <span className={styles.strikePrice}>{PRICING.bonusCard.children.originalPriceFormatted}</span>
+                                        <span className={styles.price}>{PRICING.bonusCard.children.priceFormatted}</span>
+                                    </span>
+                                </div>
+                                <div className={styles.priceRow}>
+                                    <span>{PRICING.bonusCard.adults.label}</span>
+                                    <span className={styles.bonusPriceGroup}>
+                                        <span className={styles.strikePrice}>{PRICING.bonusCard.adults.originalPriceFormatted}</span>
+                                        <span className={styles.price}>{PRICING.bonusCard.adults.priceFormatted}</span>
+                                    </span>
                                 </div>
                             </div>
 

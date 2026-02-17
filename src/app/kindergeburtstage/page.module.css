@@ -33,14 +33,37 @@
     box-shadow: var(--shadow-card);
 }
 
+/* Bonus Card */
+.bonusCard {
+    grid-column: 1 / -1;
+}
+
+@media (min-width: 1024px) {
+    .bonusCard {
+        grid-column: auto;
+    }
+}
+
 .extrasCard {
     grid-column: 1 / -1;
 }
 
 @media (min-width: 1024px) {
     .extrasCard {
-        grid-column: 1 / 2;
+        grid-column: auto;
     }
+}
+
+.bonusPriceGroup {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.strikePrice {
+    font-size: var(--text-base);
+    color: var(--color-text-light);
+    text-decoration: line-through;
 }
 
 .sectionHeader {

@@ -36,6 +36,24 @@ export const PRICING = {
             priceFormatted: '10 €',
         },
     },
+    bonusCard: {
+        entriesPaid: 10,
+        entriesReceived: 12,
+        children: {
+            label: 'Kinder',
+            price: 100,
+            priceFormatted: '100 €',
+            originalPrice: 120,
+            originalPriceFormatted: '120 €',
+        },
+        adults: {
+            label: 'Erwachsene',
+            price: 50,
+            priceFormatted: '50 €',
+            originalPrice: 60,
+            originalPriceFormatted: '60 €',
+        },
+    },
     addons: [
         {
             name: 'Kaffeemaschine',
