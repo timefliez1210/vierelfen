@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero';
 import Image from 'next/image';
 import Button from '@/components/Button';
+import Link from 'next/link';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -168,6 +169,100 @@ export default function Home() {
               fill="var(--color-cream-light)"
             />
           </svg>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className={styles.reviews}>
+        <div className={styles.container}>
+          <h2 className={styles.reviewsTitle}>Das sagen unsere Gäste</h2>
+          <div className={styles.reviewsGrid}>
+
+            <a
+              href="https://share.google/ITQ7v2h1VTS0lWbTV"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.reviewCard}
+              aria-label="Bewertung von Canan Boyraz auf Google öffnen"
+            >
+              <div className={styles.reviewStars}>★★★★★</div>
+              <p className={styles.reviewText}>
+                Wir haben den 4. Geburtstag unseres Sohnes im Café Vier Elfen als geschlossene Gesellschaft gefeiert – und es war einfach perfekt! Die Kinder hatten riesigen Spaß und wollten gar nicht mehr nach Hause. Die Dekoration war wunderschön und mit viel Liebe zum Detail gestaltet. Besonders beeindruckend war die Ballonwand, die ein tolles Highlight für die Feier war.
+              </p>
+              <div className={styles.reviewFooter}>
+                <div>
+                  <div className={styles.reviewName}>Canan Boyraz</div>
+                  <div className={styles.reviewMeta}>7 Bewertungen · vor einem Jahr</div>
+                </div>
+                <div className={styles.googleBadge}>G</div>
+              </div>
+            </a>
+
+            <a
+              href="https://share.google/SfOxTZ1g06hngvq6u"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.reviewCard}
+              aria-label="Bewertung von Sabrine Harb auf Google öffnen"
+            >
+              <div className={styles.reviewStars}>★★★★★</div>
+              <p className={styles.reviewText}>
+                Wir haben im Vierelfen unsere kleine Hochzeitsfeier gefeiert. Alle Kinder waren überglücklich und wir Erwachsenen auch. Wir sind sehr dankbar und hätten uns diesen besonderen Tag nicht schöner vorstellen können. Wir sind Wunschlos glücklich.
+              </p>
+              <div className={styles.reviewFooter}>
+                <div>
+                  <div className={styles.reviewName}>Sabrine Harb</div>
+                  <div className={styles.reviewMeta}>Local Guide · 12 Bewertungen · vor 7 Monaten</div>
+                </div>
+                <div className={styles.googleBadge}>G</div>
+              </div>
+            </a>
+
+            <a
+              href="https://share.google/ZcvlnwHgkOpKQ81A4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.reviewCard}
+              aria-label="Bewertung von S M auf Google öffnen"
+            >
+              <div className={styles.reviewStars}>★★★★★</div>
+              <p className={styles.reviewText}>
+                Habe den Geburtstag meines Sohnes hier gefeiert. Die Location war super, die Kinder hatten sehr viel Spaß. Es gab Kuchen, Kaffee, Knabbereien und freundliche und zuvorkommende Bedienung. Danke an das Vier Elfen Team für den unvergesslichen Tag!
+              </p>
+              <div className={styles.reviewFooter}>
+                <div>
+                  <div className={styles.reviewName}>S M</div>
+                  <div className={styles.reviewMeta}>2 Bewertungen · vor einem Jahr</div>
+                </div>
+                <div className={styles.googleBadge}>G</div>
+              </div>
+            </a>
+
+          </div>
+
+          <div className={styles.reviewsCta}>
+            <p className={styles.reviewsCtaText}>
+              Alle Bewertungen lesen oder selbst eine schreiben – wir freuen uns über jedes Feedback!
+            </p>
+            <a
+              href="https://www.google.com/search?q=vierelfen+hildesheim#lrd=0x47baafed63fa228f:0x307db5e6c7ed9b74,1,,,,"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.qrLink}
+              aria-label="Vier Elfen auf Google bewerten"
+            >
+              <Image
+                src="/images/google-reviews-qr.jpg"
+                alt="QR-Code für Google Bewertungen"
+                width={180}
+                height={180}
+                quality={90}
+                className={styles.qrCode}
+              />
+              <span className={styles.qrHint}>QR-Code scannen oder klicken</span>
+            </a>
+          </div>
+
         </div>
       </section>
 

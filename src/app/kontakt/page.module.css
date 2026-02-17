@@ -9,6 +9,23 @@
     padding: 0 var(--container-padding);
 }
 
+/* Hint Banner */
+.hintBanner {
+    background: var(--color-white);
+    border-top: 3px solid var(--color-primary);
+    padding: var(--space-5) 0;
+}
+
+.hintText {
+    font-size: var(--text-base);
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin: 0;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
 /* Contact Section */
 .contactSection {
     padding: var(--space-12) 0 var(--space-16);

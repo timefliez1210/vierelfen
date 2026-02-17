@@ -77,6 +77,15 @@ export default function Kontakt() {
                 variant="subpage"
             />
 
+            {/* Hint Banner */}
+            <div className={styles.hintBanner}>
+                <div className={styles.container}>
+                    <p className={styles.hintText}>
+                        💬 Hier könnt ihr nicht nur Termine anfragen oder Fragen stellen – ihr könnt uns auch gerne Feedback, Wünsche oder Verbesserungsvorschläge mitteilen. Wir möchten, dass ihr euch bei uns rundum wohlfühlt, und freuen uns über jede Rückmeldung!
+                    </p>
+                </div>
+            </div>
+
             {/* Contact Content */}
             <section className={styles.contactSection}>
                 <div className={styles.container}>
