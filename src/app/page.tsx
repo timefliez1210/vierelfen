@@ -68,8 +68,6 @@ export default function Home() {
       </section>
 
       {/* Additional Services - 3 Cards */}
-      {/* TODO: Review this section - base is correct but needs design refinement */}
-      {/* Consider: spacing, card styling, section title, icon choices, or card order */}
       <section className={styles.additionalServices}>
         <div className={styles.container}>
           <div className={styles.features}>
