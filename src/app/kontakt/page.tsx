@@ -80,9 +80,15 @@ export default function Kontakt() {
             {/* Hint Banner */}
             <div className={styles.hintBanner}>
                 <div className={styles.container}>
-                    <p className={styles.hintText}>
-                        💬 Hier könnt ihr nicht nur Termine anfragen oder Fragen stellen – ihr könnt uns auch gerne Feedback, Wünsche oder Verbesserungsvorschläge mitteilen. Wir möchten, dass ihr euch bei uns rundum wohlfühlt, und freuen uns über jede Rückmeldung!
-                    </p>
+                    <div className={styles.hintCard}>
+                        <span className={styles.hintIcon}>💬</span>
+                        <div className={styles.hintContent}>
+                            <p className={styles.hintTitle}>Nicht nur Anfragen – auch Feedback willkommen!</p>
+                            <p className={styles.hintText}>
+                                Hier könnt ihr nicht nur Termine anfragen oder Fragen stellen – ihr könnt uns auch gerne Feedback, Wünsche oder Verbesserungsvorschläge mitteilen. Wir möchten, dass ihr euch bei uns rundum wohlfühlt, und freuen uns über jede Rückmeldung!
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -11,9 +11,39 @@
 
 /* Hint Banner */
 .hintBanner {
+    background: var(--color-cream-light);
+    padding: var(--space-8) 0;
+}
+
+.hintCard {
     background: var(--color-white);
-    border-top: 3px solid var(--color-primary);
-    padding: var(--space-5) 0;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-card);
+    padding: var(--space-6) var(--space-8);
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    border-left: 4px solid var(--color-primary);
+}
+
+.hintIcon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.hintContent {
+    flex: 1;
+}
+
+.hintTitle {
+    font-weight: 700;
+    font-size: var(--text-base);
+    color: var(--color-text);
+    margin: 0 0 var(--space-1) 0;
 }
 
 .hintText {
@@ -21,9 +51,6 @@
     color: var(--color-text-light);
     line-height: 1.7;
     margin: 0;
-    text-align: center;
-    max-width: 720px;
-    margin: 0 auto;
 }
 
 /* Contact Section */
