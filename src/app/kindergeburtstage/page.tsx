@@ -15,7 +15,13 @@ export default function Kindergeburtstage() {
         <div className={styles.page}>
             <Hero
                 title="Unsere Preise"
-                subtitle="Ob große Feier oder spontaner Spielspaß – hier findet ihr das passende Angebot für euch."
+                subtitlePrefix="Das passende Angebot für "
+                subtitlePhrases={[
+                    'Kindergeburtstage',
+                    'Babypartys',
+                    'Spielnachmittage',
+                    'jede Feier',
+                ]}
                 backgroundImage="/images/showcase-party.jpg"
                 variant="subpage"
             />

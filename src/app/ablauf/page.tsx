@@ -13,7 +13,13 @@ export default function Ablauf() {
         <div className={styles.page}>
             <Hero
                 title="Ablauf & Regeln"
-                subtitle="Alles was ihr über die Buchung, Anzahlung und unsere Regeln wissen müsst"
+                subtitlePrefix="Alles zu "
+                subtitlePhrases={[
+                    'Buchung & Anzahlung',
+                    'unseren Hausregeln',
+                    'Stornierung & Krankheit',
+                    'eurem Vertragsabschluss',
+                ]}
                 backgroundImage="/images/school-party.jpg"
                 variant="subpage"
             />

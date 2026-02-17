@@ -66,7 +66,13 @@ export default function Kontakt() {
         <div className={styles.page}>
             <Hero
                 title="Kontakt & Buchung"
-                subtitle="Habt ihr Fragen oder möchtet eine Feier buchen? Füllt einfach das Formular aus!"
+                subtitlePrefix="Wir freuen uns auf "
+                subtitlePhrases={[
+                    'eure Nachricht',
+                    'eure Anfrage',
+                    'euren Anruf',
+                    'euren Besuch',
+                ]}
                 backgroundImage="/images/zoo-playarea.jpg"
                 variant="subpage"
             />

@@ -1,10 +1,13 @@
 import Image from 'next/image';
 import Button from './Button';
+import Typewriter from './Typewriter';
 import styles from './Hero.module.css';
 
 interface HeroProps {
     title: string;
-    subtitle: string;
+    subtitle?: string;
+    subtitlePrefix?: string;
+    subtitlePhrases?: string[];
     ctaText?: string;
     ctaHref?: string;
     showCharacters?: boolean;
@@ -16,6 +19,8 @@ interface HeroProps {
 export default function Hero({
     title,
     subtitle,
+    subtitlePrefix,
+    subtitlePhrases,
     ctaText,
     ctaHref = '/kontakt',
     showCharacters = true,
@@ -52,7 +57,16 @@ export default function Hero({
             {/* Content */}
             <div className={styles.content}>
                 <h1 className={styles.title}>{title}</h1>
-                <p className={styles.subtitle}>{subtitle}</p>
+                <p className={styles.subtitle}>
+                    {subtitlePhrases ? (
+                        <>
+                            {subtitlePrefix}
+                            <Typewriter phrases={subtitlePhrases} />
+                        </>
+                    ) : (
+                        subtitle
+                    )}
+                </p>
                 {ctaText && (
                     <Button href={ctaHref} size="large">
                         {ctaText}

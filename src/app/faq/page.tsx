@@ -7,7 +7,13 @@ export default function FAQ() {
         <div className={styles.page}>
             <Hero
                 title="Häufig gestellte Fragen"
-                subtitle="Alle wichtigen Infos zu Buchung, Preisen und Ablauf auf einen Blick"
+                subtitlePrefix="Alle Infos zu "
+                subtitlePhrases={[
+                    'Buchung & Zeiten',
+                    'Preisen & Paketen',
+                    'Ablauf & Regeln',
+                    'Stornierung & Krankheit',
+                ]}
                 backgroundImage="/images/vier-elfen-blocks.jpg"
                 variant="subpage"
             />

@@ -9,7 +9,14 @@ export default function Home() {
       {/* Hero Section */}
       <Hero
         title="Vier Elfen Kinderlounge"
-        subtitle="Deine Location für Spiel und Spaß in Hildesheim"
+        subtitlePrefix="Deine Location für "
+        subtitlePhrases={[
+          'Spiel und Spaß',
+          'Kindergeburtstage',
+          'Babypartys',
+          'Taufen',
+          'unvergessliche Feiern',
+        ]}
         ctaText="Jetzt anfragen"
         ctaHref="/kontakt"
         backgroundImage="/images/gallery-venue.jpg"
