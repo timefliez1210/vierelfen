@@ -1,0 +1,15 @@
+.button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    font-size: inherit;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.button:hover {
+    opacity: 0.75;
+}

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from './Footer.module.css';
 import { CONTACT, OPENING_HOURS, FOOTER_LINKS } from '@/constants';
+import CookieSettingsButton from '@/components/CookieSettingsButton';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -71,6 +72,7 @@ export default function Footer() {
                         {FOOTER_LINKS.legal.map((link) => (
                             <Link key={link.href} href={link.href}>{link.label}</Link>
                         ))}
+                        <CookieSettingsButton />
                     </nav>
                 </div>
             </div>

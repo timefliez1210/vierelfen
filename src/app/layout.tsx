@@ -3,6 +3,8 @@ import { Nunito, Fredoka } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import Analytics from '@/components/Analytics';
+import CookieBanner from '@/components/CookieBanner';
 import '@/styles/globals.css';
 
 const nunito = Nunito({
@@ -54,6 +56,8 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${nunito.variable} ${fredoka.variable}`}>
       <body>
+        <Analytics />
+        <CookieBanner />
         <ScrollToTop />
         <Header />
         <main>{children}</main>

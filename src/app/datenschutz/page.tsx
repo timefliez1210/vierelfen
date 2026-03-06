@@ -101,7 +101,43 @@ export default function Datenschutz() {
                             der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet.
                         </p>
 
-                        <h2>5. Ihre Rechte</h2>
+                        <h2>5. Analyse-Tools</h2>
+
+                        <h3>Google Analytics 4</h3>
+                        <p>
+                            Diese Website nutzt Google Analytics 4 (GA4), einen Webanalysedienst der Google
+                            Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.
+                        </p>
+                        <p>
+                            Google Analytics verwendet Cookies und ahnliche Technologien, um Informationen uber
+                            die Nutzung dieser Website zu erheben. Die dabei erzeugten Informationen werden in
+                            der Regel an einen Server von Google in den USA ubertragen und dort gespeichert.
+                            Wir haben die IP-Anonymisierung aktiviert, sodass Ihre IP-Adresse von Google
+                            innerhalb der EU gekurzt wird, bevor sie ubertragen wird.
+                        </p>
+                        <p>
+                            <strong>Zweck der Verarbeitung:</strong> Analyse des Nutzerverhaltens zur Verbesserung
+                            unseres Webangebots.
+                        </p>
+                        <p>
+                            <strong>Rechtsgrundlage:</strong> Ihre Einwilligung gemas Art. 6 Abs. 1 lit. a DSGVO.
+                        </p>
+                        <p>
+                            <strong>Datenubermittlung in Drittlander:</strong> Google verarbeitet Ihre Daten in den
+                            USA. Google LLC ist nach dem EU-US Data Privacy Framework zertifiziert, sodass ein
+                            angemessenes Datenschutzniveau gewahrleistet ist.
+                        </p>
+                        <p>
+                            <strong>Einwilligung widerrufen:</strong> Sie konnen Ihre Einwilligung jederzeit mit
+                            Wirkung fur die Zukunft widerrufen, indem Sie unten auf der Seite auf
+                            &bdquo;Cookie-Einstellungen&ldquo; klicken und Ihre Auswahl andern. Weitere
+                            Informationen finden Sie in der{' '}
+                            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+                                Datenschutzerklarung von Google
+                            </a>.
+                        </p>
+
+                        <h2>6. Ihre Rechte</h2>
                         <p>
                             Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger
                             und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben

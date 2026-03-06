@@ -1,0 +1,109 @@
+.banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--color-white);
+    border-top: 1px solid var(--color-border);
+    box-shadow: var(--shadow-xl);
+    padding: var(--space-4) var(--space-6);
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.title {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.description {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.link {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.link:hover {
+    color: var(--color-primary-dark);
+}
+
+.actions {
+    display: flex;
+    gap: var(--space-3);
+    flex-shrink: 0;
+}
+
+.decline,
+.accept {
+    flex: 1;
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-lg);
+    font-family: var(--font-primary);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-base);
+    white-space: nowrap;
+}
+
+.decline {
+    background: transparent;
+    border: 2px solid var(--color-border);
+    color: var(--color-text-light);
+}
+
+.decline:hover {
+    border-color: var(--color-text-light);
+    color: var(--color-text);
+}
+
+.accept {
+    background: linear-gradient(135deg, var(--color-cta-gradient-start), var(--color-cta-gradient-end));
+    border: 2px solid transparent;
+    color: var(--color-cta-text);
+    box-shadow: 0 2px 8px var(--color-cta-shadow);
+}
+
+.accept:hover {
+    box-shadow: 0 4px 12px var(--color-cta-shadow-hover);
+    transform: translateY(-1px);
+}
+
+@media (min-width: 768px) {
+    .inner {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .actions {
+        flex-direction: row;
+        min-width: 300px;
+    }
+
+    .decline,
+    .accept {
+        flex: 0 0 auto;
+        padding: var(--space-3) var(--space-6);
+    }
+}
