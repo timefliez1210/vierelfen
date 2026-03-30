@@ -39,6 +39,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Vier Elfen Kinderlounge' }],
   manifest: '/manifest.json',
+  verification: {
+    google: 'Jus4CppH-8B4u8mi-eFSnba2x7OXA1GZ5ZbphQR8fkA',
+  },
   openGraph: {
     title: 'Vier Elfen Kinderlounge Hildesheim',
     description: 'Unvergessliche Kindergeburtstage und private Feiern in Hildesheim',
