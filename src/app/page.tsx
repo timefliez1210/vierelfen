@@ -180,60 +180,60 @@ export default function Home() {
           <div className={styles.reviewsGrid}>
 
             <a
-              href="https://share.google/ITQ7v2h1VTS0lWbTV"
+              href="https://share.google/S7snZYzqdJQRiNVwM"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.reviewCard}
-              aria-label="Bewertung von Canan Boyraz auf Google öffnen"
+              aria-label="Bewertung von Alex Alex auf Google öffnen"
             >
               <div className={styles.reviewStars}>★★★★★</div>
               <p className={styles.reviewText}>
-                Wir haben den 4. Geburtstag unseres Sohnes im Café Vier Elfen als geschlossene Gesellschaft gefeiert – und es war einfach perfekt! Die Kinder hatten riesigen Spaß und wollten gar nicht mehr nach Hause. Die Dekoration war wunderschön und mit viel Liebe zum Detail gestaltet. Besonders beeindruckend war die Ballonwand, die ein tolles Highlight für die Feier war.
+                Wir waren bei Vier Elfen in Hildesheim und sind wirklich begeistert. Die Location ist liebevoll eingerichtet und perfekt für Kindergeburtstage oder andere Feiern mit Kindern. Man merkt sofort, dass hier viel Herz und Mühe drinsteckt. Die Kinder hatten unglaublich viel Spaß beim Spielen und wollten am liebsten gar nicht mehr nach Hause. Besonders schön fand ich die freundliche Atmosphäre und den persönlichen Umgang – man fühlt sich einfach willkommen.
               </p>
               <div className={styles.reviewFooter}>
                 <div>
-                  <div className={styles.reviewName}>Canan Boyraz</div>
-                  <div className={styles.reviewMeta}>7 Bewertungen · vor einem Jahr</div>
+                  <div className={styles.reviewName}>Alex Alex</div>
+                  <div className={styles.reviewMeta}>5 Bewertungen · 1 Foto · vor 3 Wochen</div>
                 </div>
                 <div className={styles.googleBadge}>G</div>
               </div>
             </a>
 
             <a
-              href="https://share.google/SfOxTZ1g06hngvq6u"
+              href="https://share.google/EmXOn8nFHtP0JKemJ"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.reviewCard}
-              aria-label="Bewertung von Sabrine Harb auf Google öffnen"
+              aria-label="Bewertung von Yalcin Gülen auf Google öffnen"
             >
               <div className={styles.reviewStars}>★★★★★</div>
               <p className={styles.reviewText}>
-                Wir haben im Vierelfen unsere kleine Hochzeitsfeier gefeiert. Alle Kinder waren überglücklich und wir Erwachsenen auch. Wir sind sehr dankbar und hätten uns diesen besonderen Tag nicht schöner vorstellen können. Wir sind Wunschlos glücklich.
+                Wir haben uns gemeinsam mit Freunden verabredet und haben ein tolles Treffen mit den Kindern dort veranstaltet. So hat niemand den Stress zuhause gehabt. Es hat uns super gefallen und es war so wie wir es uns vorgestellt haben. Tolle Organisation und Abwicklung zum fairen Preis.
               </p>
               <div className={styles.reviewFooter}>
                 <div>
-                  <div className={styles.reviewName}>Sabrine Harb</div>
-                  <div className={styles.reviewMeta}>Local Guide · 12 Bewertungen · vor 7 Monaten</div>
+                  <div className={styles.reviewName}>Yalcin Gülen</div>
+                  <div className={styles.reviewMeta}>Local Guide · 15 Bewertungen · vor 3 Wochen</div>
                 </div>
                 <div className={styles.googleBadge}>G</div>
               </div>
             </a>
 
             <a
-              href="https://share.google/ZcvlnwHgkOpKQ81A4"
+              href="https://share.google/SsdnQoFeHshSJ3pgT"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.reviewCard}
-              aria-label="Bewertung von S M auf Google öffnen"
+              aria-label="Bewertung von Christina Domm auf Google öffnen"
             >
               <div className={styles.reviewStars}>★★★★★</div>
               <p className={styles.reviewText}>
-                Habe den Geburtstag meines Sohnes hier gefeiert. Die Location war super, die Kinder hatten sehr viel Spaß. Es gab Kuchen, Kaffee, Knabbereien und freundliche und zuvorkommende Bedienung. Danke an das Vier Elfen Team für den unvergesslichen Tag!
+                Wundervoll und liebevoll eingerichtetes Kindercafé. Besonders gut für die Altersgruppe 2–5. Hat Spaß gemacht, unkompliziert und sehr netter Service. Gerne wieder!
               </p>
               <div className={styles.reviewFooter}>
                 <div>
-                  <div className={styles.reviewName}>S M</div>
-                  <div className={styles.reviewMeta}>2 Bewertungen · vor einem Jahr</div>
+                  <div className={styles.reviewName}>Christina Domm</div>
+                  <div className={styles.reviewMeta}>Local Guide · 108 Bewertungen · vor 2 Monaten</div>
                 </div>
                 <div className={styles.googleBadge}>G</div>
               </div>
