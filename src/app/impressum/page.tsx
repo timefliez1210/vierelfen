@@ -23,7 +23,9 @@ export default function Impressum() {
 
             <h3>Betreiber</h3>
             <p>
-              {CONTACT.businessName}
+              {CONTACT.legalName}
+              <br />
+              Betreiber: {CONTACT.operatorName}
               <br />
               {CONTACT.address.street}
               <br />
@@ -32,9 +34,16 @@ export default function Impressum() {
 
             <h3>Kontakt</h3>
             <p>
-              Telefon: {CONTACT.phoneLink}
+              Telefon: {CONTACT.phone}
               <br />
               E-Mail: {CONTACT.email}
+            </p>
+
+            <h3>Umsatzsteuer-ID</h3>
+            <p>
+              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
+              <br />
+              {CONTACT.vatId}
             </p>
 
             <h3>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h3>

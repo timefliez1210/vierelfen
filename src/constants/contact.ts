@@ -10,6 +10,9 @@ export const CONTACT = {
     },
     businessName: 'Vier Elfen Kinderlounge',
     fullName: 'Vier Elfen Kinderlounge Hildesheim',
+    legalName: 'Vier Elfen',
+    operatorName: 'Gaby Meinzer',
+    vatId: 'DE461000179',
 } as const;
 
 export const OPENING_HOURS = {
