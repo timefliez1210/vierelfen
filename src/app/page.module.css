@@ -335,7 +335,6 @@
 }
 
 .qrCode {
-  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-md);
 }
 
