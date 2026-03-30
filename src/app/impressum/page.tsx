@@ -25,7 +25,7 @@ export default function Impressum() {
             <p>
               {CONTACT.legalName}
               <br />
-              Betreiber: {CONTACT.operatorName}
+              {CONTACT.operatorName}
               <br />
               {CONTACT.address.street}
               <br />
