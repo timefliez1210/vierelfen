@@ -1,6 +1,12 @@
+import { Metadata } from 'next';
 import Hero from '@/components/Hero';
 import styles from './page.module.css';
 import { PRICING, CAPACITY, OPENING_HOURS, PACKAGE_INCLUDES } from '@/constants';
+
+export const metadata: Metadata = {
+    title: 'Häufige Fragen zu Buchung, Preisen und Ablauf',
+    description: 'Alle Antworten zu Kindergeburtstagen bei Vier Elfen: Preise, Kapazität, Buchungsablauf, Stornierung und was im Paket enthalten ist.',
+};
 
 export default function FAQ() {
     return (
@@ -15,6 +21,7 @@ export default function FAQ() {
                     'Stornierung & Krankheit',
                 ]}
                 backgroundImage="/images/vier-elfen-blocks.jpg"
+                backgroundImageAlt="Bunte Spielzeuge und Bausteine in der Vier Elfen Kinderlounge"
                 variant="subpage"
             />
 

@@ -1,5 +1,6 @@
 export const NAV_LINKS = [
     { href: '/', label: 'Home' },
+    { href: '/ideen', label: 'Ideen' },
     { href: '/kindergeburtstage', label: 'Preise' },
     { href: '/ablauf', label: 'Regeln' },
     { href: '/kontakt', label: 'Kontakt' },
@@ -7,8 +8,10 @@ export const NAV_LINKS = [
 
 export const FOOTER_LINKS = {
     info: [
+        { href: '/ideen', label: 'Ideenschmiede' },
         { href: '/kindergeburtstage', label: 'Kindergeburtstage' },
         { href: '/ablauf', label: 'Ablauf & Regeln' },
+        { href: '/faq', label: 'Häufige Fragen' },
         { href: '/kontakt', label: 'Kontakt & Buchung' },
     ],
     legal: [
@@ -19,6 +22,10 @@ export const FOOTER_LINKS = {
 
 export const ROUTES = {
     home: '/',
+    ideen: '/ideen',
+    ideenKindergeburtstag: '/ideen/kindergeburtstag',
+    ideenFeiern: '/ideen/feiern',
+    ideenSpieltermin: '/ideen/spieltermin',
     prices: '/kindergeburtstage',
     rules: '/ablauf',
     contact: '/kontakt',

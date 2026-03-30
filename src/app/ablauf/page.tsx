@@ -4,8 +4,8 @@ import Button from '@/components/Button';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
-    title: 'Ablauf & Regeln',
-    description: 'Alles zum Ablauf der Buchung, Anzahlung, Vertrag und Hausregeln bei Vier Elfen Kinderlounge Hildesheim.',
+    title: 'Ablauf & Buchung: So funktioniert eine Feier bei Vier Elfen',
+    description: 'Alles zur Buchung, Anzahlung, Stornierung und den Hausregeln bei Vier Elfen Kinderlounge Hildesheim. Einfach, transparent und stressfrei.',
 };
 
 export default function Ablauf() {
@@ -21,6 +21,7 @@ export default function Ablauf() {
                     'eurem Vertragsabschluss',
                 ]}
                 backgroundImage="/images/school-party.jpg"
+                backgroundImageAlt="Kinder feiern gemeinsam eine Party in der Vier Elfen Kinderlounge"
                 variant="subpage"
             />
 

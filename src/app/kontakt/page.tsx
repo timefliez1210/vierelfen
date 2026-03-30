@@ -51,6 +51,7 @@ export default function Kontakt() {
                     title="Vielen Dank!"
                     subtitle="Eure Anfrage wurde erfolgreich gesendet. Wir melden uns schnellstmöglich bei euch!"
                     backgroundImage="/images/zoo-playarea.jpg"
+                    backgroundImageAlt="Spielbereich der Vier Elfen Kinderlounge in Hildesheim"
                     variant="subpage"
                 />
                 <section className={styles.thankYou}>
@@ -74,6 +75,7 @@ export default function Kontakt() {
                     'euren Besuch',
                 ]}
                 backgroundImage="/images/zoo-playarea.jpg"
+                backgroundImageAlt="Spielbereich der Vier Elfen Kinderlounge in Hildesheim"
                 variant="subpage"
             />
 

@@ -12,6 +12,7 @@ interface HeroProps {
     ctaHref?: string;
     showCharacters?: boolean;
     backgroundImage?: string;
+    backgroundImageAlt?: string;
     imagePosition?: string;
     variant?: 'home' | 'subpage';
 }
@@ -25,6 +26,7 @@ export default function Hero({
     ctaHref = '/kontakt',
     showCharacters = true,
     backgroundImage,
+    backgroundImageAlt = '',
     imagePosition = 'center',
     variant = 'home',
 }: HeroProps) {
@@ -37,7 +39,7 @@ export default function Hero({
                 {backgroundImage && (
                     <Image
                         src={backgroundImage}
-                        alt=""
+                        alt={backgroundImageAlt}
                         fill
                         priority
                         quality={70}

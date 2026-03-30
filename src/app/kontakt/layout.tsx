@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Kontakt & Buchung',
-    description: 'Kontaktiert die Vier Elfen Kinderlounge Hildesheim für Buchungsanfragen und Fragen zu Kindergeburtstagen.',
+    title: 'Kindergeburtstag anfragen & buchen in Hildesheim | Vier Elfen',
+    description: 'Kindergeburtstag oder Spieltermin bei Vier Elfen in Hildesheim anfragen. Einfach per Formular, Telefon oder E-Mail melden und Termin vereinbaren.',
 };
 
 export default function KontaktLayout({

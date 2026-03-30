@@ -21,6 +21,7 @@ export default function Home() {
         ctaText="Jetzt anfragen"
         ctaHref="/kontakt"
         backgroundImage="/images/gallery-venue.jpg"
+        backgroundImageAlt="Spielbereich und festliche Dekoration in der Vier Elfen Kinderlounge Hildesheim"
         imagePosition="top left"
       />
 

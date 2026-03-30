@@ -6,8 +6,8 @@ import { PRICING } from '@/constants';
 import { Cake, Puzzle, Sparkles, Tag } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Preise & Angebote',
-    description: 'Unsere Preise für Kindergeburtstage, Feiern und offenes Spielen bei Vier Elfen in Hildesheim.',
+    title: 'Preise & Pakete für Kindergeburtstage in Hildesheim',
+    description: 'Kindergeburtstag in Hildesheim mieten: Pakete ab 330 €, 4 Stunden exklusiv, Themendeko & bis zu 100 Ballons inklusive. Jetzt bei Vier Elfen anfragen.',
 };
 
 export default function Kindergeburtstage() {
@@ -23,6 +23,7 @@ export default function Kindergeburtstage() {
                     'jede Feier',
                 ]}
                 backgroundImage="/images/showcase-party.jpg"
+                backgroundImageAlt="Festlich dekorierter Kindergeburtstag in der Vier Elfen Kinderlounge Hildesheim"
                 variant="subpage"
             />
 

@@ -1,0 +1,106 @@
+.page {
+    background: var(--color-cream-light);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Intro */
+.intro {
+    padding: var(--space-12) 0 var(--space-4);
+}
+
+.introText {
+    font-size: var(--text-lg);
+    color: var(--color-text-light);
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.75;
+}
+
+/* Cards */
+.cardsSection {
+    padding: var(--space-8) 0 var(--space-16);
+}
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .cardsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-card);
+    text-decoration: none;
+    transition: var(--transition-base);
+    color: inherit;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.cardIcon {
+    font-size: 2.75rem;
+    margin-bottom: var(--space-4);
+    display: block;
+}
+
+.cardTitle {
+    font-size: var(--text-2xl);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-3);
+}
+
+.cardDescription {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    flex-grow: 1;
+    margin-bottom: var(--space-6);
+    font-size: var(--text-base);
+}
+
+.cardLink {
+    color: var(--color-purple);
+    font-weight: 600;
+    font-size: var(--text-sm);
+}
+
+/* CTA */
+.cta {
+    padding: var(--space-16) 0;
+    text-align: center;
+    background: var(--color-white);
+}
+
+.ctaTitle {
+    font-size: var(--text-3xl);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-4);
+}
+
+.ctaText {
+    color: var(--color-text-light);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
