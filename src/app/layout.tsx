@@ -23,7 +23,7 @@ const fredoka = Fredoka({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Vier Elfen Kinderlounge | Kindergeburtstage in Hildesheim',
+    default: 'Vier Elfen Offizielle Website - Kindergeburtstage Hildesheim',
     template: '%s | Vier Elfen Kinderlounge',
   },
   description:
